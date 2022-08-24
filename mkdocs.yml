@@ -77,7 +77,7 @@ theme:
   logo: images/dhammacakka.png
   features:
     - navigation.instant
-    - navigation.top
+    - navigation.tabs
     - navigation.sections
     - navigation.indexes
     - search.suggest
