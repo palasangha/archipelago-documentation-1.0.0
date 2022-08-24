@@ -61,26 +61,18 @@ nav:
 theme:
   name: material
   palette:
-    accent: blue
-  # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
+    - primary: blue
+    - accent: blue
     # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default 
+    - scheme: default
       toggle:
-        icon: material/brightness-7
+        icon: material/brightness-7 
         name: Switch to dark mode
-
     # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to light mode
   favicon: images/dhammacakka.png
   logo: images/dhammacakka.png
   features:
@@ -118,7 +110,10 @@ extra:
       name: Archipelago Commons Google Group
     - icon: fontawesome/brands/slack
       link: https://archipelagocommons.slack.com
-      name: Archipelago Commons Slack Channe
+      name: Archipelago Commons Slack Channel
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
   version:
     provider: mike
     default: default
