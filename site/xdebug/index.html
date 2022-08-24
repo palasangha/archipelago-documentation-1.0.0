@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/xdebug/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Debugging PHP in Archipelago - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Debugging PHP in Archipelago";
+        var mkdocs_page_input_path = "xdebug.md";
+        var mkdocs_page_url = "/xdebug/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Site Administration & Configuration</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Debugging PHP in Archipelago</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#part-1-docker">Part 1: Docker</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-2-phpstorm">Part 2: PHPStorm</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Site Administration & Configuration &raquo;</li>
+      <li>Debugging PHP in Archipelago</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="debugging-php-in-archipelago">Debugging PHP in Archipelago</h1>
+<p>This document describes how to enable Xdebug for local PHP development using the PHPStorm IDE and a docker container running the Archipelago <code>esmero-php:development</code> image. It involves interacting with the <a href="https://github.com/esmero/archipelago-docker-images">esmero/archipelago-docker-images</a> repo and the <a href="https://github.com/esmero/archipelago-deployment">esmero/archipelago-deployment</a> repo.</p>
+<h2 id="part-1-docker">Part 1: Docker</h2>
+<ol>
+<li>
+<p>Run the following commands from your <code>/archipelago-deployment</code> directory:</p>
+<p><code>docker-compose down</code> \
+<code>docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d</code></p>
+<p><br>This version of <code>docker-compose up</code> uses an override file to modify our services. <code>docker-compose.dev.yml</code> we now have an extra PHP container called <code>esmero-php-debug</code>. </p>
+<p><br>To stop the containers in the future, run <code>docker-compose -f docker-compose.yml -f docker-compose.dev.yml down</code>.</p>
+<p><br><em>(To make these commands easier to remember, consider making bash aliases in your .bashrc file.)</em>
+<br><em>(If you are running your development on a Linux system, you may need to make a modification to your xdebug configuration file on the esmero-php-dev container. See appendix at the bottom of this page.)</em></p>
+<p><br>So we have reloaded the containers and now you are ready for Part 2.</p>
+</li>
+</ol>
+<h2 id="part-2-phpstorm">Part 2: PHPStorm</h2>
+<ol>
+<li>
+<p>In PHPStorm, open your <code>archipelago-deployment</code> project.</p>
+</li>
+<li>
+<p>Go to <code>Preferences &gt; Languages &amp; Frameworks &gt; PHP &gt; Debug</code> or <code>Settings &gt; PHP &gt; Servers</code>. In this window there is an Xdebug section. Use these settings:</p>
+<ul>
+<li>Debug port: <code>9003</code>. (do NOT use the default, 9000)</li>
+<li>Can accept external connections: yes, select checkbox</li>
+<li>(optional) Break at first line in PHP scripts: uncheck. If you leave this selected, you will have to manually step through a breakpoint from Drupal's main index.php file on every request, which is quite annoying. However, leaving this box checked can be useful for making sure the connection is working at first, before you have set any internal breakpoints.</li>
+</ul>
+<p>Your settings should look like this. Hit APPLY and OK.
+<img alt="Debug" src="../images/xdebug/debug-settings.png" />    </p>
+</li>
+<li>
+<p>Go to <code>Preferences &gt; Languages &amp; Frameworks &gt; PHP &gt; Servers</code>. We will create a new server here. Use these settings:</p>
+<ul>
+<li>Name: <code>docker-debug-server</code></li>
+<li>Host: <code>localhost</code></li>
+<li>Port: <code>8001</code></li>
+<li>Use path mappings: yes, select the checkbox</li>
+<li>Under project files, select the top-level <code>archipelago-deployment</code> directory in the <code>File/Directory</code> column.</li>
+<li>In the <code>Absolute path on the server</code> add <code>/var/www/html</code></li>
+</ul>
+<p>Hit APPLY and OK and close the window.</p>
+<p><img alt="Debug" src="../images/xdebug/server-settings-2.png" />    </p>
+</li>
+<li>
+<p>Go to <code>Run &gt; Edit Configurations</code>. Hit the <code>+</code> Button to create a new PHP Remote Debug. Name whatever you want, I called mine <code>Archipelago</code>. Use these settings:</p>
+<ul>
+<li>Filter debug connection by IDE Key: yes, select the checkbox</li>
+<li>Server: select <code>docker-debug-server</code> from dropdown (we created this in step 3)</li>
+<li>IDE Key: <code>archipelago</code> (this matches the key set in our container)</li>
+</ul>
+<p><img alt="Debug" src="../images/xdebug/edit-configurations.png" />    </p>
+</li>
+<li>
+<p>Note: If you try to validate your connection, it will fail. But that's ok.</p>
+</li>
+<li>
+<p>Validate your connection. With  <code>Run &gt; Edit Configurations</code> still open, you can hit the link that says "Validate". Use these settings in the following validation window:</p>
+<ul>
+<li>Path to create validation script <code>&lt;your local path&gt;/archipelago-deployment/web</code></li>
+<li>Url to validation script: <code>http://localhost:8001</code></li>
+</ul>
+<p>Hit VALIDATE. You should get a series of green check marks. If you get a warning about missing <code>php.ini</code> file, that is OK, our file has a different name in the container (<code>xdebug.ini</code>) and is still being read correctly.
+<img alt="Debug" src="../images/xdebug/validate-2.png" />    </p>
+</li>
+</ol>
+<h1 id="set-up-browser-integration">Set up Browser Integration</h1>
+<ol>
+<li>
+<p>We have had success using the <a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en">XDebug Helper</a> extension in Chrome. Once you have the extension installed, right-click on the bug icon in the top right of your chrome browser window and select "Options" to configure the IDE key. Under "IDE", select "Other", and in the text box, enter "archipelago"</p>
+<p><img alt="Debug" src="../images/xdebug/xdebut-helper-menu.png" title="XDebug Helper Options" />
+<img alt="Debug" src="../images/xdebug/xdebug-helper-set-key.png" title="XDebug Helper IDE Key" /></p>
+</li>
+</ol>
+<h1 id="actually-debugging">Actually Debugging!</h1>
+<ol>
+<li>
+<p>Hit the button (top right bar of PHPStorm) that looks like a telephone, for <code>Start Listening for PHP Debug Connections</code>.</p>
+<p><img alt="Debug" src="../images/xdebug/telephone.png" /></p>
+</li>
+<li>
+<p>Now, you can use <code>Run &gt; Debug</code> and select the <code>Archipelago</code> named configuration that we created in the previous steps. The debugging console will appear. It will say it is waiting for incoming connection from 'archipelago'
+ .</p>
+<p><img alt="Debug" src="../images/xdebug/phpstorm-run-xdebug-archipelago-menu.png" />
+<img alt="Debug" src="../images/xdebug/waiting-archipelago.png" />
+<img alt="Debug" src="../images/xdebug/waiting.png" /></p>
+</li>
+<li>
+<p>Right now the debugging session is not enabled. Browse to  <code>localhost:8001</code>. Click on the gray XDebug Helper icon at the top right of your window and select the green "Debug" button. This will tell chrome to set the xdebug session key when you reload the page.</p>
+</li>
+<li>
+<p>Now set a breakpoint in your code, and refresh the page.
+ If you have breakpoints set, either manually, or from leaving "Break at first line in PHP scripts" checked, you should have output now in the debugger.</p>
+</li>
+<li>
+<p>If you are done actively debugging, it is best to click the green XDebug Helper icon and select "Disable". This will greatly improve speed and performance for your app in development. When you need to debug, just turn on debugging using the XDebug Helper button again.</p>
+</li>
+<li>
+<p>If you would like to see the output of your xdebug logs, run the following script:
+   <code>docker exec -ti esmero-php bash -c 'tail -f /tmp/xdebug.log &gt; /proc/1/fd/2'</code></p>
+</li>
+</ol>
+<p>Then, you can use the typical docker logs command on the <code>esmero-php</code> container, and you will see the xdebug output:
+   <code>docker logs esmero-php -f</code></p>
+<p>Xdebug makes accessing variables in Drupal kind of great. Many possibilities, including debugging for Twig templates. Happy debugging!</p>
+<hr />
+<h3 id="appendix-xdebug-on-a-linux-host">Appendix: XDebug on a linux host</h3>
+<p>If you are developing on a linux machine, you may need to make a change to the xdebug configuration file.</p>
+<ol>
+<li>Create a new file in the <code>/archipelago-deployment/xdebug</code> folder called <code>xdebug.ini</code> and enter the following text:
+    <div class="highlight"><pre><span></span><code>zend_extension=xdebug
+
+[xdebug]
+xdebug.mode=develop,debug
+xdebug.discover_client_host = 1
+xdebug.start_with_request=yes
+</code></pre></div></li>
+<li>Make a bind mount to this file in your docker-compose.dev.yml file:
+    <div class="highlight"><pre><span></span><code>  php-debug:
+  ...
+    volumes:
+  - ${PWD}:/var/www/html:cached
+    # Bind mount custom xdebug configuration file...
+  - ${PWD}/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+</code></pre></div></li>
+<li>Restart your docker containers using the method described at the top of this page.</li>
+</ol>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback.</p>
+<p>Return to the <a href="..">Archipelago Documentation main page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../sslsetup/" class="btn btn-neutral float-left" title="How to Set Up SSL for Docker/Archipelago"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../generalqa_index/" class="btn btn-neutral float-right" title="General Q&A">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../sslsetup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../generalqa_index/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

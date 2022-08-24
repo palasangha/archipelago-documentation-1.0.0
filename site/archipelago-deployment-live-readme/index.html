@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/archipelago-deployment-live-readme/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Start - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Start";
+        var mkdocs_page_input_path = "archipelago-deployment-live-readme.md";
+        var mkdocs_page_url = "/archipelago-deployment-live-readme/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Archipelago-Deployment-Live</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Start</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-this-repo-for">What is this repo for?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-this-repo-not-for">What is this repo not for?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#minimal">Minimal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recommend-base-line">Recommend base line</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#good-for-all-large-repository">Good for all large repository</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#os">OS:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#skills-and-the-important-human-aspect">Skills and the important human aspect</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-on-linuxx86amd-system">Deployment on Linux/X86/AMD system</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#step-1">Step 1:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-2">Step 2:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-3-setup-your-enviromental-variables-for-dockerservices">Step 3. Setup your enviromental variables for Docker/Services</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-4-first-run">Step 4. First Run</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-5-deploy-drupal-9">Step 5. Deploy Drupal 9</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-6-users-and-initial-content">Step 6. Users and initial Content.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#step-7-set-your-public-iiif-server-url-to-your-actual-domain">Step 7. Set your public IIIF server URL to your actual domain</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-on-arm64v8graviton-apple-m1-system">Deployment on ARM64/v8(Graviton, Apple M1) system:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-do-i-know-my-architecture">How do I know my Architecture?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#caring-coding-fixing-testing">Caring &amp; Coding + Fixing + Testing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acknowledgments">Acknowledgments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Archipelago-Deployment-Live &raquo;</li>
+      <li>Start</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>--&gt;</p>
+<h1 id="archipelago-deployment-live">Archipelago Deployment Live</h1>
+<p>A Cloud / Local production ready Archipelago Deployment using Docker and soon Kubernetes.</p>
+<h2 id="what-is-this-repo-for">What is this repo for?</h2>
+<p>Running Archipelago Commons on a live public instance using SSL with Blob/Object Storage backend </p>
+<ul>
+<li>Cloud-based deployment, e.g. AWS/Azure under Linux</li>
+<li>Self-managed servers running Linux</li>
+<li>x86/AMD86 or ARM64/v8 CPU architectures</li>
+</ul>
+<h2 id="what-is-this-repo-not-for">What is this repo not for?</h2>
+<ul>
+<li>Running your own local/development Archipelago. For that we suggest using <a href="https://github.com/esmero/archipelago-deployment">https://github.com/esmero/archipelago-deployment</a></li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<h3 id="minimal">Minimal</h3>
+<ul>
+<li>4 Gbytes of RAM (e.g AWS EC2 t3.medium) 2 CPUs, Single SSD Drive of 100 Gbytes</li>
+</ul>
+<h3 id="recommend-base-line">Recommend base line</h3>
+<ul>
+<li>8 Gbytes of RAM (AWS EC2 t3.medium)  2 CPUs, Single SSD Drive of 100 Gbytes, optional: one magnetic Drive of 500 Gbytes for Caches/Temp files/Backups.</li>
+</ul>
+<h3 id="good-for-all-large-repository">Good for all large repository</h3>
+<ul>
+<li>16 Gbytes of RAM (AWS EC2 m6g.xlarge - Graviton)  4 CPUs, Single SSD Drive of 200 Gbytes, optional: one magnetic Drive of 1TB for Caches/Temp files/Backups.</li>
+</ul>
+<h3 id="os">OS:</h3>
+<ul>
+<li>Ubuntu 20.04 /Amazon Linux 2/Debian 10.9 / AlmaLinux (Centos replacement) matching your CPU architecture (of course)</li>
+<li>Most recent <code>Docker</code> running as a service and <code>docker-compose</code></li>
+</ul>
+<h3 id="skills-and-the-important-human-aspect">Skills and the important human aspect</h3>
+<ul>
+<li>Basic Unix/Linux terminal skills and a root/sudo account</li>
+<li><code>Docker</code> basics knowledge and how to manage packages in your System</li>
+<li>Knowledge of how to manage AWS/Azure or any other cloud-based provider for Computing Instances and S3 compatible Object Storage system and the associated permissions credentials to do so.</li>
+<li>To be patient. Please read everything. Do not skip steps. Do not only copy and paste commands. Explanations give context and might help you troubleshoot issues.</li>
+</ul>
+<p>Basically this guide is meant for humans with basic to medium <code>DevOps</code> background or humans with patience that are willing to troubleshoot, ask, and try again when that background is not (yet) enough. And we are here to help.</p>
+<h2 id="deployment-on-linuxx86amd-system">Deployment on Linux/X86/AMD system</h2>
+<h3 id="step-1">Step 1:</h3>
+<p>Deploy your base system</p>
+<p>Make sure your Firewall/AWS Security group has these ports open for everyone to access</p>
+<ul>
+<li>443 (NGINX SSL)</li>
+<li>80 (NGINX HTTP)
+And protected/modally open for your own development/testing/administration</li>
+<li>8183 (Cantaloupe)</li>
+<li>8983 (Solr)</li>
+<li>6400 (NLP64)</li>
+<li>9001 (Minio)</li>
+<li>22 (so you can ssh into your machine)</li>
+</ul>
+<p>Setup your system using your favorite package manager with </p>
+<ul>
+<li>Docker</li>
+<li>git</li>
+<li>htop</li>
+<li>tree</li>
+<li>docker-compose</li>
+</ul>
+<p>e.g. for Amazon Linux 2 (x86/amd64) these steps are tested:</p>
+<div class="highlight"><pre><span></span><code>sudo yum update -y
+sudo amazon-linux-extras install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+sudo chkconfig docker on
+sudo systemctl <span class="nb">enable</span> docker
+sudo yum install -y git htop tree
+sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo reboot
+</code></pre></div>
+<p>Reboot is needed to allow Docker to take full control over your OS resources.</p>
+<h3 id="step-2">Step 2:</h3>
+<p>In your location of choice clone this repo</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/esmero/archipelago-deployment-live
+<span class="nb">cd</span> archipelago-deployment-live
+git checkout <span class="m">1</span>.0.0
+</code></pre></div>
+<h3 id="step-3-setup-your-enviromental-variables-for-dockerservices">Step 3. Setup your enviromental variables for Docker/Services</h3>
+<h4 id="setup-enviromentals">Setup Enviromentals</h4>
+<p>Setup your deployment enviromental variables by copying the template</p>
+<p><div class="highlight"><pre><span></span><code>cp deploy/ec2-docker/.env.template deploy/ec2-docker/.env
+</code></pre></div>
+and editing it</p>
+<div class="highlight"><pre><span></span><code>nano deploy/ec2-docker/.env
+</code></pre></div>
+<p>The content of that file would be similar to this.</p>
+<div class="highlight"><pre><span></span><code>ARCHIPELAGO_ROOT=/home/ec2-user/archipelago-deployment-live
+ARCHIPELAGO_EMAIL=your@validemail.org
+ARCHIPELAGO_DOMAIN=your.domain.org
+MINIO_ACCESS_KEY=THE_S3_AZURE_OR_LOCAL_MINIO_KEY
+MINIO_SECRET_KEY=THE_S3_AZURE_OR_LOCAL_MINIO_SECRET
+MYSQL_ROOT_PASSWORD=YOUR_MYSQL_PASSWORD_FOR_ARCHIPELAGO
+MINIO_BUCKET_MEDIA=THE_NAME_OF_YOUR_S3_BUCKET_FOR_PERSISTEN_STORAGE
+MINIO_FOLDER_PREFIX_MEDIA=media/
+MINIO_BUCKET_CACHE=THE_NAME_OF_YOUR_S3_BUCKET_FOR_IIIF_STORAGE
+MINIO_FOLDER_PREFIX_CACHE=iiifcache/
+REDIS_PASSWORD=YOUR_REDIS_PASSWORD
+</code></pre></div>
+<p>What does each key mean?</p>
+<ul>
+<li><code>ARCHIPELAGO_ROOT</code>: the <strong>absolute path</strong> to your <code>archipelago-deployment-live</code> git repo in your host machine.</li>
+<li><code>ARCHIPELAGO_EMAIL</code>: a valid <strong>email</strong>, will be used to register your SSL Certificate via Certbot.</li>
+<li><code>ARCHIPELAGO_DOMAIN</code>: a valid <strong>domain name</strong> for your repository. This domain will be also used to request your SSL Certificate via Certbot.</li>
+<li><code>MINIO_ACCESS_KEY</code>: If you are running a Cloud Service backed S3/Azure Storage this needs to be generated there. The user/IAM owner of this ACCESS KEY needs to have access to read/write the bucket you will configure in this same <code>.env</code>. If running local <code>min.io</code> whatever you set will be used.</li>
+<li><code>MINIO_SECRET_KEY</code>: If you are running a Cloud Service backed S3/Azure Storage this needs to generated there. The user/IAM owner of the matching SECRET_KEY needs to have access to read/write the bucket you will configure in this same <code>.env</code> file. If running local <code>min.io</code> whatever you set will be used.</li>
+<li><code>MYSQL_ROOT_PASSWORD</code>: The MYSQL 8 or Mariadb 15 password. This password will be used later also during Drupal deployment via <code>drush</code></li>
+<li><code>MINIO_BUCKET_MEDIA</code>: The name of your Persistant Storage Bucket. If using mini.io local we recommend keeping it simple, e.g. <code>archipelago</code>.</li>
+<li><code>MINIO_FOLDER_PREFIX_MEDIA</code>: The <code>folder</code> (a prefix really) where your DO Storage and File storage will go inside the <code>MINIO_BUCKET_MEDIA</code> Bucket. <code>media/</code> is a <em>fine</em> name for this one and common in archipelago deployments. <strong>IMPORTANT:</strong> Always terminate these with a <code>/</code>. </li>
+<li><code>MINIO_BUCKET_CACHE</code>: The name of your IIIF Cache storage Bucket. May be the same as <code>MINIO_BUCKET_MEDIA</code>. If different make sure your your <code>MINIO_ACCESS_KEY</code> and/or IAM role ACL have permission to read write to this one too.</li>
+<li><code>MINIO_FOLDER_PREFIX_CACHE</code>:  The <code>folder</code> (a prefix really) where Cantaloupe will/can write its <code>iiif</code> caches. <code>iiifcache/</code> is a <em>lovely</em> name we use a lot. <strong>IMPORTANT:</strong> Always terminate these with a <code>/</code>.</li>
+<li><code>REDIS_PASSWORD</code>: Password for your REDIS (Drupal Cache/Queue storage) if you decide to enabled the Drupal REDIS module.</li>
+</ul>
+<p><code>IMPORTANT NOTE</code>: For AWS EC2. If your selected an <code>IAM role</code> for your server when setting it up/deploying it, <code>min.io</code> will use the AWS EC2 backed internal API to request access to your S3. This means the ROLE itself needs to have read/write access (ACL) to the given Bucket(s) and your key/secrets won't be able to override that. Please do not ignore this note. It will save you a LOT of frustration and coffee. You can also run an EC2 instace without a given IAM and in that case just the ACCESS_KEY/SECRET will matter.</p>
+<p>Now that you know, you also know that these values should be not <strong>shared</strong> and this <code>.env</code> file <strong>should not</strong> commited/kept in version control. Please be careful.</p>
+<p><code>docker-compose</code> will read this <code>.env</code> and start all services for you based on its content.</p>
+<p>Once you have modified this you are ready for your first big decision. </p>
+<h4 id="running-a-fully-qualified-domain-you-wish-a-validsigned-certificate-for-amdintel-architecture">Running a fully qualified domain you wish a valid/signed certificate for AMD/INTEL Architecture?</h4>
+<p>This means you will use the <code>docker-compose-aws-s3.yml</code>. Do the following:</p>
+<div class="highlight"><pre><span></span><code>cp deploy/ec2-docker/docker-compose-aws-s3.yml deploy/ec2-docker/docker-compose.yml
+</code></pre></div>
+<h4 id="running-a-fully-qualified-domain-you-wish-a-validsigned-certificate-for-arm64apple-m1-architecture">Running a fully qualified domain you wish a valid/signed certificate for ARM64/Apple M1 Architecture?</h4>
+<p>This means you will use the <code>docker-compose-aws-s3-arm64.yml</code>. Do the following</p>
+<div class="highlight"><pre><span></span><code>cp deploy/ec2-docker/docker-compose-aws-s3-arm64.yml deploy/ec2-docker/docker-compose.yml
+</code></pre></div>
+<h5 id="optional-expert-extra-domains-does-not-apply-to-arm64apple-m1-architecture">Optional (expert) extra domains (does not apply to ARM64/Apple M1 Architecture):</h5>
+<p>If you have more than a single domain you may create a text file inside 
+<code>config_storage/nginxconfig/certbot_extra_domains/your.domain.org</code> and write for each subdomain there an entry/line.</p>
+<h4 id="or-running-self-signed-optional-and-does-not-apply-to-arm64apple-m1-architecture">OR Running self-signed? (optional and does not apply to ARM64/Apple M1 Architecture):</h4>
+<p>Only if you are not running a fully qualified domain you wish a valid/signed. We <strong>really DO not</strong> recommend this route. IF you plan on using this deployment for local testing or running on non SSL please go for <a href="https://github.com/esmero/archipelago-deployment">https://github.com/esmero/archipelago-deployment</a> which delivers the same experience in less than 20 minutes deployment time.</p>
+<p>Generate a self signed Cert</p>
+<div class="highlight"><pre><span></span><code>sudo openssl req -x509 -nodes -days <span class="m">365</span> -newkey rsa:2048 -keyout data_storage/selfcert/private/nginx.key -out data_storage/selfcert/certs/nginx.crt 
+sudo openssl dhparam -out data_storage/selfcert/dhparam.pem <span class="m">4096</span>
+cp deploy/ec2-docker/docker-compose-selfsigned.yml deploy/ec2-docker/docker-compose.yml
+</code></pre></div>
+<p>Note: Self signed docker-compose.yml file is setup to use min.io with local storage</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${ARCHIPELAGO_ROOT}/data_storage/minio-data:/data:cached</span><span class="w"></span>
+</code></pre></div>
+<p>This folder will be created by min.io. If you are using a secondary Drive (e.g. magnetic) you can modify your <code>deploy/ec2-docker/docker-compose.yml</code> to use a folder there, e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/persistentinotherdrive/data_storage/minio-data:/data:cached</span><span class="w"></span>
+</code></pre></div>
+<p>Make sure your logged in user can read/write to it.</p>
+<p>NOTE: If you want to use AWS S3 storage for the self signed version replace the minio Service yaml block with this <a href="https://github.com/esmero/archipelago-deployment-live/blob/e90cf7701f1ae8e0a580a0901aaadb669baa21fd/deploy/ec2-docker/docker-compose-aws-s3.yml#L108-L125">Service Block</a> in your new <code>deploy/ec2-docker/docker-compose.yml</code>. You can mix and match services and even remove all <code>:cached</code> statements for <em>improved</em> R/W volumen performance.</p>
+<h3 id="step-4-first-run">Step 4. First Run</h3>
+<h4 id="first-permissions">First Permissions</h4>
+<div class="highlight"><pre><span></span><code>sudo chown <span class="m">8183</span>:8183 config_storage/iiifconfig/cantaloupe.properties
+sudo chown -R <span class="m">8183</span>:8183 data_storage/iiifcache
+sudo chown -R <span class="m">8183</span>:8183 data_storage/iiiftmp
+sudo chown -R <span class="m">8983</span>:8983 data_storage/solrcore
+</code></pre></div>
+<h4 id="actual-first-run">Actual first run</h4>
+<p>Time to spin our docker containers for the first time. We will start all without going into background so log/error checking is easier, especially if you have selected a Valid/Signed Cert choice and also want to be sure S3 keys/access are working.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> deploy/ec2-docker
+docker-compose up
+</code></pre></div>
+<p>You will see a lot of things happening. Check for errors/problems/clear alerts and give all a minute or so to start. 
+Ok, let's assume your setup managed to request a valid signed SSL cert, you will see a nice message!</p>
+<div class="highlight"><pre><span></span><code>- Congratulations! Your certificate and chain have been saved at:XXXXX
+   Your certificate will expire on 20XX-XX-XX. To obtain a new or
+   tweaked version of this certificate <span class="k">in</span> the future, simply run
+   certbot again. To non-interactively renew *all* of your
+   certificates, run <span class="s2">&quot;certbot renew&quot;</span>
+</code></pre></div>
+<p>Archipelago will do that for you whenever it's about to expire so no need to deal with this manually, even when <code>docker-compose</code> restarts.</p>
+<p>Now press CTRL+C. <code>docker-compose</code> will shutdown gracefully. Good!</p>
+<h3 id="step-5-deploy-drupal-9">Step 5. Deploy Drupal 9</h3>
+<h4 id="composer-and-drupal">Composer and Drupal</h4>
+<p>Copy the shipped default composer.default.json to composer.json (ONLY if you are installing from scratch):</p>
+<div class="highlight"><pre><span></span><code>cp ../../drupal/composer.default.json ../../drupal/composer.json
+</code></pre></div>
+<p>Start Docker again</p>
+<div class="highlight"><pre><span></span><code>docker-compose up -d
+</code></pre></div>
+<p>Wait a few seconds and run:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;chown -R www-data:www-data private&quot;</span>
+docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;chown -R www-data:www-data web/sites&quot;</span>
+docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer install&quot;</span>
+</code></pre></div>
+<p>Composer install will take a little while and bring all your PHP libraries.</p>
+<p>Once done, execute our setup script that will prepare your Drupal <code>settings.php</code> and bring some of the <code>.env</code> enviromental variables to the Drupal environment. </p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s1">&#39;scripts/archipelago/setup.sh&#39;</span>
+</code></pre></div>
+<p>And now you can deploy Drupal! </p>
+<p><strong>IMPORTANT:</strong> Make sure you replace in the following command inside <code>root:MYSQL_ROOT_PASSWORD</code> the <code>MYSQL_ROOT_PASSWORD</code> string with the <strong>value</strong> you used/assigned in your <code>.env</code> file for <code>MYSQL_ROOT_PASSWORD</code>. And replace <code>ADMIN_PASSWORD</code> with a password that is safe and you won't forget! That passwords is for your Drupal super user (uid:0).</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti -u www-data esmero-php bash -c <span class="s2">&quot;cd web;../vendor/bin/drush -y si --verbose --existing-config --db-url=mysql://root:MYSQL_ROOT_PASSWORD@esmero-db/drupal9 --account-name=admin --account-pass=ADMIN_PASSWORD -r=/var/www/html/web --sites-subdir=default --notify=false;drush cr;chown -R www-data:www-data sites;&quot;</span>
+</code></pre></div>
+<h3 id="step-6-users-and-initial-content">Step 6. Users and initial Content.</h3>
+<p>After installation is done (may take a few) you can install initial users and assign them roles. Copy each line separately. A missing permission will not let you ingest the initial Metadata Displays and AMI set.</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s1">&#39;drush ucrt demo --password=&quot;demo&quot;; drush urol metadata_pro &quot;demo&quot;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s1">&#39;drush ucrt jsonapi --password=&quot;jsonapi&quot;; drush urol metadata_api &quot;jsonapi&quot;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s1">&#39;drush urol administrator &quot;admin&quot;&#39;</span>
+</code></pre></div>
+<p>Before ingesting the base content we need to make sure we can access your <code>JSON-API</code> on for your new domain. That means we need to change internal urls (<code>https://esmero-web</code>) to the new valid SSL driven ones. This is easy:</p>
+<p>On your host machine (no need to <code>docker exec</code> these ones), replace first in the following command <code>your.domain.org</code> with the domain you setup in your <code>.env</code> file. Go to (cd into) <strong>your base git clone folder</strong> (Important: <strong>YOUR BASE CLONE FOLDER</strong>) and then run</p>
+<div class="highlight"><pre><span></span><code> sed -i <span class="s1">&#39;s/http:\/\/esmero-web/https:\/\/your.domain.org/g&#39;</span> drupal/scripts/archipelago/deploy.sh
+ sed -i <span class="s1">&#39;s/http:\/\/esmero-web/https:\/\/your.domain.org/g&#39;</span> drupal/scripts/archipelago/update_deployed.sh
+</code></pre></div>
+<p>Now your <code>deploy.sh</code> and <code>update_deployed.sh</code> are update and ready. Let's ingest some Twig Templates, an AMI Set, menus and a Blocks.</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s1">&#39;scripts/archipelago/deploy.sh&#39;</span>
+</code></pre></div>
+<p>NOTE: <code>update_deployed.sh</code> is not needed when deploying for the first time and totally <strong>discouraged</strong> on a customized Archipelago. 
+If you make modifications to your <code>Twig templates</code>, that command will replace the ones shipped by us with fresh copies overwriting all your modifications. Only run to restore larger errors or when needing to update non-customized ones with newer versions.</p>
+<h3 id="step-7-set-your-public-iiif-server-url-to-your-actual-domain">Step 7. Set your public IIIF server URL to your actual domain</h3>
+<p>By default archipelago ships with a public facing and an internal facing IIIF Server URLs configured. These urls are used by a number of IIIF enabled viewers and need to be changed to reflect your new reality (a real Domain name and a proxied path!). These settings belong to the <code>strawberryfield/format_strawberryfield</code> module. </p>
+<p>First check your current settings:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush config-get format_strawberryfield.iiif_settings&quot;</span>
+</code></pre></div>
+<p>You will see the following:</p>
+<div class="highlight"><pre><span></span><code>pub_server_url: <span class="s1">&#39;http://localhost:8183/iiif/2&#39;</span>
+int_server_url: <span class="s1">&#39;http://esmero-cantaloupe:8182/iiif/2&#39;</span>
+</code></pre></div>
+<p>Let's modify <code>pub_server_url</code>. Replace in the following command <code>your.domain.org</code> with the domain you defined in your <code>.env</code> file. 
+NOTE: We are passing the <code>-y</code> flag to <code>drush</code> avoid that way having to answer "yes".</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush -y config-set format_strawberryfield.iiif_settings pub_server_url https://your.domain.org/cantaloupe/iiif/2&quot;</span>
+</code></pre></div>
+<p>Finally Done! Now you can log into your new Archipelago using <code>https</code> and start exploring. Thank you for following this guide!</p>
+<h2 id="deployment-on-arm64v8graviton-apple-m1-system">Deployment on ARM64/v8(Graviton, Apple M1) system:</h2>
+<p>This applies to AWS <code>m6g</code> and <code>t3g</code> Instances and is documented inline in this guide. Please open an <a href="https://github.com/esmero/archipelago-deployment-live/issues">ISSUE</a> in this repository if you run into any problems.
+Please review <a href="https://github.com/esmero/archipelago-deployment-live/blob/1.0.0/deploy/ec2-docker/docker-compose-aws-s3-arm64.yml">https://github.com/esmero/archipelago-deployment-live/blob/1.0.0/deploy/ec2-docker/docker-compose-aws-s3-arm64.yml</a> for more info.</p>
+<h3 id="how-do-i-know-my-architecture">How do I know my Architecture?</h3>
+<p>Run </p>
+<div class="highlight"><pre><span></span><code>uname -m 
+</code></pre></div>
+<ul>
+<li>For an <code>x86(64 bit)</code> processor system output will be <code>x86_64</code></li>
+<li>For an <code>ARM(64 bit)</code> processor system output will be <code>aarch64</code></li>
+</ul>
+<h2 id="caring-coding-fixing-testing">Caring &amp; Coding + Fixing + Testing</h2>
+<ul>
+<li><a href="https://github.com/DiegoPino">Diego Pino</a></li>
+<li><a href="https://github.com/alliomeria">Allison Lund</a></li>
+<li><a href="https://github.com/aksm">Albert Min</a></li>
+<li><a href="https://github.com/giancarlobi">Giancarlo Birello</a></li>
+</ul>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>This software is a <a href="https://metro.org">Metropolitan New York Library Council</a> Open-Source initiative and part of the Archipelago Commons project.</p>
+<h2 id="license">License</h2>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../archipelago-deployment-upgradeFromD8ToD9/" class="btn btn-neutral float-left" title="Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../archipelago-deployment-live-gitworkflow/" class="btn btn-neutral float-right" title="Github Workflow">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../archipelago-deployment-upgradeFromD8ToD9/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../archipelago-deployment-live-gitworkflow/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

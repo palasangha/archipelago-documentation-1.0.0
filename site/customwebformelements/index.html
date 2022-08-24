@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/customwebformelements/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Archipelago Custom Webform Elements - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Archipelago Custom Webform Elements";
+        var mkdocs_page_input_path = "customwebformelements.md";
+        var mkdocs_page_url = "/customwebformelements/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Archipelago 101</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Webforms in Archipelago</a>
+    <ul class="current">
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4 current"><a class="reference internal current" href="./">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Archipelago 101 &raquo;</li>
+          <li>Digital Objects and Collections, Metadata, General Workflows &raquo;</li>
+          <li>Webforms in Archipelago &raquo;</li>
+      <li>Archipelago Custom Webform Elements</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="archipelago-custom-webform-elements">Archipelago Custom Webform Elements</h1>
+<p>In addition to the <a href="https://api.drupal.org/api/drupal/namespace/Drupal%21Core%21Render%21Element/8">core elements</a> provided by the <a href="https://www.drupal.org/project/webform">Drupal Webform module</a>, Archipelago also deploys a robust set of custom webform elements specific to digital repositories metadata needs and use cases.</p>
+<h3 id="computed-elements">Computed Elements:</h3>
+<ul>
+<li>
+<p>Computed Metadata Transplant</p>
+<ul>
+<li>Provides an item that takes source values (not only elements) and distributes them into other places/elements via a twig template</li>
+</ul>
+</li>
+<li>
+<p>Computed Token</p>
+<ul>
+<li>Provides an item to display computed webform submission values using tokens.</li>
+</ul>
+</li>
+<li>
+<p>Computed Twig  </p>
+<ul>
+<li>Provides an item to display computed webform submission values using Twig</li>
+</ul>
+</li>
+</ul>
+<h3 id="file-upload-elements">File Upload Elements:</h3>
+<ul>
+<li>
+<p>Enhancements for Audio, Document, Image, Video file uploads</p>
+<ul>
+<li>Backend processing for technical metadata (such as pronom, exif extraction)</li>
+</ul>
+</li>
+<li>
+<p>Import Metadata from a File <em>(such as XML)</em></p>
+<ul>
+<li>Provides a form element for uploading, saving a file and parsing the content as metadata/webform submission data.</li>
+</ul>
+</li>
+<li>
+<p>Import Metadata in CSV format from a File</p>
+<ul>
+<li>Provides a form element for uploading, saving a file and parsing the content as metadata/webform submission data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="datetime-elements">Date/Time Elements:</h3>
+<ul>
+<li>Multi Format Date and Date Range<ul>
+<li>Provides a form element for setting/reading Dates indifferent formats suitable for metadata.</li>
+</ul>
+</li>
+</ul>
+<h3 id="composite-elements">Composite Elements:</h3>
+<ul>
+<li>Panorama Tour Builder<ul>
+<li>Provides a form element to build multi-scene Panorama Tour Builder with hotspots</li>
+</ul>
+</li>
+</ul>
+<h3 id="linked-data">Linked Data:</h3>
+<p><em>(*found under Composite Elements in "Add Element" menu)</em></p>
+<ul>
+<li>
+<p>Library of Congress (LoC) Linked Open data</p>
+<ul>
+<li>Provides a form element to reconciliate against <a href="https://id.loc.gov">LoC Headings and similar LoD Sources</a></li>
+<li>Able to configure which LoC Autocomplete Source Provider is used:<ul>
+<li>Subjects (LCSH)</li>
+<li>LC Name Authority File (LCNAF)</li>
+<li>LC Genre/Form Terms (LCGFT</li>
+<li>Thesaurus of Graphic Materials (TGN)</li>
+<li>MARC list for Geographic areas</li>
+<li>Filter Suggest results by RDF Type<ul>
+<li>Any of the Classes listed here: https://id.loc.gov/ontologies/madsrdf/v1.html</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Multi LoD Source Agent Items</p>
+<ul>
+<li>Provides a form element to reconciliate Agents against Multiple sources of Agents</li>
+</ul>
+</li>
+<li>
+<p>Wikidata</p>
+<ul>
+<li>Provides a form element to reconciliate against Wikidata Items and Agents<ul>
+<li>via <a href="https://www.mediawiki.org/wiki/API:Main_page">Wikidata Action API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Getty Vocabulary Term</p>
+<ul>
+<li>Provides a form element to reconciliate against the <a href="https://vocab.getty.edu">Getty Vocabularies</a></li>
+</ul>
+</li>
+<li>
+<p>VIAF</p>
+<ul>
+<li>Provides a form element to reconciliate against <a href="https://viaf.org">VIAF (OCLC) Items</a></li>
+</ul>
+</li>
+<li>
+<p>Location GEOJSON (Nominatim--Open Street Maps)</p>
+<ul>
+<li>Provides a form element to collect valid location information (address, longitude, latitude, geolocation) using <a href="https://nominatim.openstreetmap.org/ui/search.html">Nominatim/Openstreetmap</a> open API</li>
+</ul>
+</li>
+</ul>
+<h4 id="but-wait-theres-more">But wait there's more!</h4>
+<p>You can review the coding behind these custom elements here:
+<a href="https://github.com/esmero/webform_strawberryfield/tree/ISSUE-69/src/Element">https://github.com/esmero/webform_strawberryfield/tree/ISSUE-69/src/Element</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../modifyingfileextensionsinwebform/" class="btn btn-neutral float-left" title="Customizing Webforms (Modifying allowable file extensions)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../metadatatwigs/" class="btn btn-neutral float-right" title="Twig Templates and Archipelago">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../modifyingfileextensionsinwebform/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../metadatatwigs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

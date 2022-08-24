@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/CODE_OF_CONDUCT/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Code of Conduct - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Code of Conduct";
+        var mkdocs_page_input_path = "CODE_OF_CONDUCT.md";
+        var mkdocs_page_url = "/CODE_OF_CONDUCT/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Code of Conduct</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#protocol-for-conflict-resolution">Protocol for Conflict Resolution</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#initial-incident">Initial Incident</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#escalation">Escalation</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Code of Conduct</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="archipelago-code-of-conduct-anti-harassment-policy">Archipelago - code of conduct / anti-harassment policy</h1>
+<p>The Archipelago Commons community and the Metropolitan New York Library Council (METRO) are dedicated to providing a welcoming and positive experience for all participants, whether they are at a formal gathering, in a social setting, or taking part in activities online. This includes any forum, mailing list, wiki, web site, IRC channel, public meeting, conference, workshop/training or private correspondence. The Archipelago community welcomes participation from people all over the world, and these community members bring with them a wide variety of professional, personal and social backgrounds; whatever these may be, we treat colleagues with dignity and respect.</p>
+<p>This Code of Conduct governs how we behave in public or in private. We expect it to be honored by everyone who represents the project officially or informally, claims affiliation with the project, or participates directly.</p>
+<p>We ask that all community members adhere to the following expectations:</p>
+<ul>
+<li>
+<p>METRO and Archipelago have a zero-tolerance policy for verbal, physical, and sexual harassment. Anyone who is asked to stop a hostile or harassing behavior is expected to do so immediately. <a href="https://www1.nyc.gov/assets/cchr/downloads/pdf/materials/SexHarass_Factsheet-English.pdf">Here</a>, for reference, are New York State’s requirements.</p>
+<p>Harassment includes: Offensive verbal comments related to sex, gender, ethnicity, nationality, socioeconomic status, sexual orientation, disability, physical appearance, body size, age, race, religion; sexual or discriminatory images in public spaces; deliberate intimidation; stalking; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; and unwelcome sexual attention.</p>
+</li>
+<li>
+<p>Participation in discussions and activities should be respectful at all times. Please refrain from making inappropriate comments. Create opportunities for all people to speak, exercising tolerance of the perspectives and opinions of others. When we disagree, we do this in a polite and professional manner. We may not always agree. When frustrated, we back away and look for good intentions, not reasons to be more frustrated. When we see a flaw in a contribution, we offer guidance on how to fix it.</p>
+</li>
+<li>METRO and Archipelago honor the ability to be anonymous. If a person is going by their handle, a pseudonym, or doesn’t wish to use their name, please respect their wishes and privacy. This also includes ‘outing’ someone’s workplace, their age, their gender, their real name, etc, without their consent. We take people’s privacy and their comfort very seriously.</li>
+</ul>
+<h2 id="protocol-for-conflict-resolution">Protocol for Conflict Resolution</h2>
+<p>Participants in METRO and Archipelago communication channels violating this code of conduct may be sanctioned or expelled at the discretion of the organizers of the meeting (if the channel is an in-person event) or the Archipelago Advisory Board (if the channel is online).</p>
+<h3 id="initial-incident">Initial Incident</h3>
+<p>If you are being harassed, notice that someone else is being harassed, or have any other concerns, and you feel comfortable speaking with the offender, please inform the offender that he/she/they has affected you negatively. Oftentimes, the offending behavior is unintentional, and the accidental offender and offended will resolve the incident by having that initial discussion. Participants asked to stop any harassing behavior are expected to comply immediately.</p>
+<h3 id="escalation">Escalation</h3>
+<p>If the offender insists that they did not offend, if offender is actively harassing you, or if direct engagement is not a good option for you at this time, then you will need a third party to step in. To report any violation of the following code of conduct or if you have any questions or suggestions about this code of conduct, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#114;&#99;&#104;&#105;&#112;&#101;&#108;&#97;&#103;&#111;&#45;&#99;&#111;&#109;&#109;&#117;&#110;&#105;&#116;&#121;&#64;&#109;&#101;&#116;&#114;&#111;&#46;&#111;&#114;&#103;">&#97;&#114;&#99;&#104;&#105;&#112;&#101;&#108;&#97;&#103;&#111;&#45;&#99;&#111;&#109;&#109;&#117;&#110;&#105;&#116;&#121;&#64;&#109;&#101;&#116;&#114;&#111;&#46;&#111;&#114;&#103;</a> or <a href="http://archipelago.nyc/code-of-conduct">fill out this form anonymously</a>. This will be sent to leadership at METRO and the advisory board member currently acting as the Code of Conduct liaison. Our enforcement guidelines work in accordance with those published at the <a href="https://www.contributor-covenant.org/version/2/0/code_of_conduct">Contributor Covenant</a>. </p>
+<p>Upon review, if METRO leadership and the Code of Conduct Liaison determine that the incident constitutes harassment they may take any action they deem appropriate, including warning the offender, expulsion from the meeting or other community channels, or contacting a higher authority such as a representative from the offender's institution.</p>
+<p>These policies draw from many other code of conduct documents, including but not limited to: <a href="https://github.com/code4lib/code-of-conduct">code4lib</a>, <a href="https://www.diglib.org/about/code-of-conduct/">DLF</a>, <a href="https://islandora.ca/codeofconduct">Islandora</a>, <a href="https://github.com/Islandora-Collaboration-Group/icg_information/blob/master/code-of-conduct.md">ICG</a>, <a href="https://wiki.lyrasis.org/display/samvera/Code+of+Conduct">Samvera</a>, <a href="https://meta.wikimedia.org/wiki/Wikimedia_New_York_City/Code_of_Conduct">WikimediaNYC</a>, and <a href="http://www.idocde.net/pages/35">IDOCE</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../devops/" class="btn btn-neutral float-left" title="Software Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../archipelago-deployment-readme/" class="btn btn-neutral float-right" title="Start">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../devops/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../archipelago-deployment-readme/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/annotations/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Annotations - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Annotations";
+        var mkdocs_page_input_path = "annotations.md";
+        var mkdocs_page_url = "/annotations/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Archipelago 101</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">Annotations</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#enabling-annotations">Enabling Annotations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-and-saving-annotations">Adding and Saving Annotations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#editing-and-deleting-annotations">Editing and Deleting Annotations</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Archipelago 101 &raquo;</li>
+          <li>Digital Objects and Collections, Metadata, General Workflows &raquo;</li>
+      <li>Annotations</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="annotations-in-archipelago">Annotations in Archipelago</h1>
+<p>Archipelago extends <a href="https://github.com/recogito/annotorious">Annotorius</a> to provide W3C-compliant Web Annotations for Digital Objects. These annotations can be added per image (when multiple), edited for text and shape adjustments, and saved/discarded using the regular Edit mode (bonus track 1: temp storage that persists when you log out and come back in to your session). Archipelago also exposes a full API for WebAnnotations, that keeps track of which Images (referenced in the <a href="../strawberryfields/">Strawberryfield</a> @ <code>as:image</code>) were annotated and creates the W3C valid entries inside your Digital Object's JSON @ <code>ap:annotationCollection</code> (bonus track 2: multiple users can annotate the same resource, enabling digital scholarship collaboration opportunities). </p>
+<p><em>Important Note: For any image-based Digital Objects you would like to apply annotations to, the Digital Object <code>type</code> must be setup to display the image file(s) using the Open SeaDragon viewer. More information about about Managing Display Modes in Archipelago can be found <a href="../webformsasinput/#manage-display">here</a>. Please stay tuned for updates announcing web annotation integration for Mirador 3.</em></p>
+<h3 id="enabling-annotations">Enabling Annotations</h3>
+<ol>
+<li>Navigate to Admin --&gt; Structure --&gt; Content types --&gt; Digital Object --&gt; Manage Display and select the "Digital Object Full view" mode. <code>https://yoursite.org/admin/structure/types/manage/digital_object/display/digital_object_viewmode_fullitem</code>
+    <img alt="annotations step 1" src="../images/annotations_step1.jpg" /></li>
+<li>On the <strong>“Fragola”</strong> row, click on the small gear icon on the far right, which will be open the configurations for this display type. </li>
+<li>Select the <strong>“Enable loading/editing of W3C webAnnotations”</strong> option.  <br />
+<img alt="annotations step 2" src="../images/annotations_step2.jpg" /><ul>
+<li><em>Learn more about the JSON format of WebAnnotations here: https://www.w3.org/TR/annotation-model/#index-of-json-keys.</em></li>
+</ul>
+</li>
+<li>Under <strong>"What tool to enable"</strong>, select either the Rectangular or Polygon (freehand drawing) tool for your annotation style.</li>
+<li>Select the 'Update' button.</li>
+<li>Also <strong>Save</strong> your settings using the button at the bottom of the page.</li>
+</ol>
+<p><img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /> You are now ready to get started adding annotations! <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
+<h3 id="adding-and-saving-annotations">Adding and Saving Annotations</h3>
+<ol>
+<li>Navigate to the image-based Digital Object you would like to apply annotations to.</li>
+<li>To add a new annotation, select and hold the <code>Shift</code> key. Click and then drag to apply either a Rectangular box or multi-point Polygon shape.</li>
+<li>Double click to exit the annotation drawing mode.</li>
+<li>Enter the text for your annotation in the pop-up window.
+    <img alt="annotations edit" src="../images/annotations_edit.jpg" /></li>
+<li>Click the "Ok" button when you are ready.</li>
+<li>To save your annotation (or annotations if you created multiple), navigate to the main Digital Object "Edit" tab, where you will see a message about Unsaved Web Annotation Changes.
+    <img alt="annotations edit delete save" src="../images/annotations_edit_delete_save.jpg" /></li>
+<li>Select "Save" to preserve your Annotation(s). They will now become part of your Digital Object's JSON, found under the <code>ap:annotationCollection</code> key.<ul>
+<li><em>Pressing the "Discard" button will discard only the unsaved Annotations, and will reload the page.</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="editing-and-deleting-annotations">Editing and Deleting Annotations</h3>
+<ol>
+<li>Navigate to the image-based Digital Object you would whose annotation(s) you want to edit or delete.</li>
+<li>Click within the Annotation and select the downwards arrow in the upper right-hand corner of the pop-up window.</li>
+<li>Select either the "Edit" option and Edit the Annotation as desired; Or select the "Delete" option.
+    <img alt="annotations edit delete" src="../images/annotations_edit_delete.jpg" /></li>
+<li>To preserve your editing or deleting actions, navigate to the main Digital Object "Edit" tab, where you will see a message about Unsaved Web Annotation Changes. <em>(See screenshot in Step 6 of <a href="https://github.com/esmero/archipelago-documentation/blob/1.0.0/docs/annotations.md#adding-and-saving-annotations">Adding and saving Annotations</a> above.)</em></li>
+<li>Select "Save" to preserve your Annotation(s) edits or deletions. Pressing the "Discard" button will discard only the unsaved Annotations changes, and will reload the page.</li>
+</ol>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback.</p>
+<p>Return to the <a href="..">Archipelago Documentation main page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../googleapi/" class="btn btn-neutral float-left" title="Configuration for Google Sheets API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../strawberryfield-formatters/" class="btn btn-neutral float-right" title="Strawberryfield Formatters">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../googleapi/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../strawberryfield-formatters/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

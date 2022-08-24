@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/strawberryfields/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Strawberryfields Forever - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Strawberryfields Forever";
+        var mkdocs_page_input_path = "strawberryfields.md";
+        var mkdocs_page_url = "/strawberryfields/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Strawberryfields Forever</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-strawberry-fields-does-why-we-built-it-and-what-issues-it-addresses">What Strawberry fields does, why we built it, and what issues it addresses</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nothing-is-real">Nothing Is Real</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ingesting">Ingesting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exposing">Exposing</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>About Archipelago &raquo;</li>
+      <li>Strawberryfields Forever</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="strawberryfields-forever">Strawberryfields Forever</h1>
+<p><img alt="Strawberries" src="../images/strawberries.png" /></p>
+<h2 id="what-strawberry-fields-does-why-we-built-it-and-what-issues-it-addresses">What Strawberry fields does, why we built it, and what issues it addresses</h2>
+<p>Archipelago integrates transparently into the Drupal 8 ecosystem using its Core Content Entity System (Nodes), Discovery (Search API) and in general all its Core Components plus a few well maintained external ones.</p>
+<p>By design (and because we think its imperative), Archipelago takes full charge of the metadata layer and associated media assets by implementing a highly configurable, smart Drupal field written in JSON named <a href="https://github.com/esmero/strawberryfield/tree/1.0.0"><code>Strawberryfield</code></a> that attaches to any content.</p>
+<p>All of JSON's internals, keys, paths, and values are dynamically exposed to the rest of the ecosystem. Strawberryfield even remembers its structure as data evolves by storing JSON paths of every little detail.</p>
+<h2 id="nothing-is-real">Nothing Is Real</h2>
+<p>Archipelago includes additional companion modules, <a href="https://github.com/esmero/webform_strawberryfield/tree/1.0.0"><code>Webform_strawberryfield</code></a> and <a href="https://github.com/esmero/webform_strawberryfield/tree/1.0.0"><code>Format_strawberryfield</code></a> that extend the core metadata capabilities of the main <a href="https://github.com/esmero/strawberryfield/tree/1.0.0"><code>Strawberryfield</code></a> module and allow the same flexibility to be exposed during ingest and viewing of digital objects.</p>
+<p>The in-development <a href="https://github.com/esmero/strawberry_runners"><code>Strawberry Runners</code></a> and <a href="https://github.com/esmero/ami"><code>AMI</code></a> modules further extend Archipelago's capabilities. Additional information related to these modules will be made available following initial public releases.</p>
+<h2 id="ingesting">Ingesting</h2>
+<p><code>Webform Strawberryfield</code> (we had a better name) extends and integrates into the <a href="https://www.drupal.org/project/webform"><code>amazing Drupal Webform module</code></a> to allow Archipelago users to build any possible metadata and media, ingest and edit, workflows directly via the UI using webforms.</p>
+<p>By not having a hardcoded ingest method, Archipelago can be used outside the GLAM community too, as a pure data repository in biological sciences, digital humanities, archives, or even as a mixed, multidisciplinary/cross-domain system.</p>
+<p>We also added <code>WIKIDATA</code>, <code>LoC</code>, <code>Getty</code>, and <code>VIAF</code> authority querying elements to aid in linking to external Linked Open Data sources.</p>
+<p>All these integrations are made to help local needs and community identities to survive the never-ending race for the next metadata schema. They are made to prototype, plan, and grow independently of how metadata will need to be exposed yesterday or tomorrow. And we plan to add more.</p>
+<p>Explore what other features <a href="../strawberryfield-formatters/"><code>webform_strawberryfield</code></a> provides to help with ingesting, reading, and interacting with your metadata during that process.</p>
+<h2 id="exposing">Exposing</h2>
+<p><img alt="JSONupcaststar" src="../images/jsonupcaststar.png" /></p>
+<p><code>Format Strawberryfield</code> (we had even a better name but...) deals with taking your JSON based metadata and <code>casting</code>, mashing, mixing, exposing, displaying, and transforming it to allow rich interaction for users and other systems with your digital objects.</p>
+<p>In its guts (or heart?), Archipelago does something quite simple but core to our concept of repository: it transforms in realtime the <em>close to your needs open schema metadata</em> that lives in strawberryfield as JSON into <em>close to other one's fixed schema needs metadata</em>; any destination format, using a fast, cached templating system. A templating system that is core to Drupal, called <code>Twig</code>:</p>
+<ul>
+<li><a href="https://twig.symfony.com">Twig in Symfony</a></li>
+<li><a href="https://www.drupal.org/docs/theming-drupal/twig-in-drupal">Twig in Drupal</a></li>
+</ul>
+<p>This templating system is exposed to Archipelago users through the UI and stored side by side in the repository as content (we named them <code>Metadata Display entities</code>, but they not only serve display needs!) so users can fully control how metadata is transformed and published without touching their individual sources.</p>
+<p>Templates or recipes can be shared, exported, ingested, updated, and adapted in many ways. Fast changes are possible without having to wait for the next mayor release of Archipelago or your favorited Metadata Schema Specs Committee agreeing on the next or the last version. Of course, this module not only handles metadata but media assets too, extracting local or remote URIs and files from your metadata and rendering them as media viewers: books, 3D models, images, panoramas, A/V with IIIF in its soul.</p>
+<p>You can learn more about what <a href="../strawberryfield-formatters/">format_strawberryfield</a> can do and what many other possibilities are exposed through our <a href="../metadatatwigs/">templating system</a>.</p>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback.</p>
+<p>Return to the <a href="..">Archipelago Documentation main page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ourtake/" class="btn btn-neutral float-left" title="Archipelago's Philosophy & Guiding Principles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../devops/" class="btn btn-neutral float-right" title="Software Services">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ourtake/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../devops/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

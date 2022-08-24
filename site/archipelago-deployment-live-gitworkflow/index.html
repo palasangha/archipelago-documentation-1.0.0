@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/archipelago-deployment-live-gitworkflow/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Github Workflow - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Github Workflow";
+        var mkdocs_page_input_path = "archipelago-deployment-live-gitworkflow.md";
+        var mkdocs_page_url = "/archipelago-deployment-live-gitworkflow/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Archipelago-Deployment-Live</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Github Workflow</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#1-keep-your-archipelago-under-version-control-via-github">1. Keep your Archipelago under Version Control via Github</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-steps">Basic steps</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#11-start-by-creating-a-git-fork">1.1 Start by creating a Git Fork</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#12-connect-your-live-instance-terminal">1.2 Connect your Live instance terminal.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#13-now-lets-create-from-your-current-live-instance-a-new-branch">1.3 Now let's create from your current Live Instance a new Branch.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#14-push-the-basics">1.4 Push the Basics.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#15-first-commit">1.5 First Commit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-keeping-your-archipelago-modules-updated-during-releases">2. Keeping your Archipelago Modules Updated during releases</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#which-modules-belong-to-archipelago-and-follow-a-release-cycle">Which modules belong to Archipelago and follow a release cycle?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-keeping-your-archipelagos-drupal-contributed-modules-and-core-updated">3. Keeping your Archipelago's Drupal Contributed Modules and Core updated</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#31-contributed-modules">3.1 Contributed Modules.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#31-drupal-core-inside-the-same-major-version">3.1 Drupal Core inside the same major version:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#32-drupal-core-between-major-versions">3.2 Drupal Core between major versions:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Archipelago-Deployment-Live &raquo;</li>
+      <li>Github Workflow</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="managing-sheltering-pruning-and-nurturing-your-own-custom-archipelago">Managing, sheltering, pruning and nurturing your own custom Archipelago</h1>
+<p>Now that you have your base Archipelago Live Deployment running (Do you? If not, <a href="../archipelago-deployment-live-readme/">go back!</a>) you may be wondering about things like:</p>
+<ol>
+<li>What happens when I need to update to the next release?</li>
+<li>How do I keep my Drupal and Modules updated in between releases?</li>
+<li>Can I add Drupal Modules?</li>
+<li>Will a new release overwrite all my customizations?</li>
+<li>What things are safe to customize?</li>
+<li>How do I keep my very own things in Version Control and safe from others?</li>
+<li>And many (many) other similar questions.</li>
+</ol>
+<h2 id="1-keep-your-archipelago-under-version-control-via-github">1. Keep your Archipelago under Version Control via Github</h2>
+<p><code>Archipelagos</code> are living beings. They evolve and become beautiful, closer and closer to your needs. Because of that <code>resetting</code> your particularities on every <code>Archipelago</code> code release is not a good idea, nor even recommended.
+What you want is to keep your own <code>Drupal Settings</code>—your facets, your themes, your Solr fields, your own modules, and all their configurations—safe and be able to restore all in case something goes wrong.</p>
+<p>The ones we ship with every Release will <code>reset</code> your Archipelago's settings to Factory defaults if applied <code>wildly</code>.</p>
+<p>This is where <code>Github</code> comes in place.</p>
+<h3 id="basic-steps">Basic steps</h3>
+<p>Prerequisites:</p>
+<ul>
+<li>Have an Archipelago Deployment Live instance running</li>
+<li>Have Terminal access to your Live Instance</li>
+<li>Have a Github account</li>
+<li>Have a personal Github <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">Access Token Created</a></li>
+<li>Run <code>git config --global --edit</code> on your Live Instance and Set your user name/email/etc.</li>
+<li>Note: Opens in <code>Vi</code>! In case of emergency/panic press <code>ESC</code> and type <code>:x</code> to escape and/or run away in terror. To edit Press <code>i</code> and uncomment the lines. Once Done press <code>ESC</code> and type <code>:x</code> to save.</li>
+</ul>
+<h3 id="11-start-by-creating-a-git-fork">1.1 Start by creating a Git Fork</h3>
+<p>Let's fork <a href="https://github.com/esmero/archipelago-deployment-live">https://github.com/esmero/archipelago-deployment-live</a> under <strong>your own Account</strong> via the web.
+Happy Note: Since 2021 also keeping forked branches in sync with the origin can be done via the UI directly.</p>
+<h3 id="12-connect-your-live-instance-terminal">1.2 Connect your Live instance terminal.</h3>
+<p>Move to your repository's base folder, and let's start by adding your New Fork as a secondary Git <code>Origin</code>.
+Replace in this command <code>yourOwnAccount</code> with (guess what?) <strong>your own account</strong>:</p>
+<div class="highlight"><pre><span></span><code>git remote add upstream https://github.com/yourOwnAccount/archipelago-deployment-live
+</code></pre></div>
+<p>Now check if you have two remotes (<code>origin</code> =&gt; This repository, <code>upstream</code> =&gt; your own fork):</p>
+<div class="highlight"><pre><span></span><code>git remote -v
+</code></pre></div>
+<p>You will see this:</p>
+<div class="highlight"><pre><span></span><code>origin  https://github.com/esmero/archipelago-deployment-live <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/esmero/archipelago-deployment-live <span class="o">(</span>push<span class="o">)</span>
+upstream    https://github.com/yourOwnAccount/archipelago-deployment-live <span class="o">(</span>fetch<span class="o">)</span>
+upstream    https://github.com/yourOwnAccount/archipelago-deployment-live <span class="o">(</span>push<span class="o">)</span>
+</code></pre></div>
+<p>Good!</p>
+<h3 id="13-now-lets-create-from-your-current-live-instance-a-new-branch">1.3 Now let's create from your current Live Instance a new Branch.</h3>
+<p>We will push this branch into your Fork and it will be all yours to maintain. Please replace <code>yourOwnOrg</code> with any Name you want for this. We like to keep the current Branch name in place after your personal prefix:</p>
+<div class="highlight"><pre><span></span><code>git checkout -b yourOwnOrg-1.0.0-RC3
+</code></pre></div>
+<p>Good, you now have a new <code>local</code> branch named <code>yourOwnOrg-1.0.0-RC3</code>, and it's time to decide what we are going to push into Github.</p>
+<h3 id="14-push-the-basics">1.4 Push the Basics.</h3>
+<p>By default our deployment strategy (this repository) ignores a few files you want to have in Github. 
+Also, there are things like the Installed Drupal Modules and PHP Libraries (the Source Code), the Database, Caches, your Secrets (<code>.env</code> file), and your Drupal <code>settings.php</code> file.
+You <strong>FOR SURE</strong> do <strong>not</strong> want to have these in Github and are better suited for a private Backup Storage.</p>
+<p>Let's start by <code>push</code>ing what you have (no commits, your new <code>yourOwnOrg-1.0.0-RC3</code> as it is) to your new Fork. From there on we can add new Commits and files:</p>
+<div class="highlight"><pre><span></span><code>git push upstream yourOwnOrg-1.0.0-RC3
+</code></pre></div>
+<p>And Git will respond with the following (use your <code>yourOwnAccount</code> personal Github Access Token as password):</p>
+<div class="highlight"><pre><span></span><code>Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>: yourOwnAccount
+Password <span class="k">for</span> <span class="s1">&#39;https://yourOwnAccount@github.com&#39;</span>: 
+Total <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+remote: 
+remote: Create a pull request <span class="k">for</span> <span class="s1">&#39;yourOwnOrg-1.0.0-RC3&#39;</span> on GitHub by visiting:
+remote:      https://github.com/yourOwnAccount/archipelago-deployment-live/pull/new/yourOwnOrg-1.0.0-RC3
+remote: 
+To https://github.com/yourOwnAccount/archipelago-deployment-live
+ * <span class="o">[</span>new branch<span class="o">]</span>      yourOwnOrg-1.0.0-RC3 -&gt; yourOwnOrg-1.0.0-RC3
+</code></pre></div>
+<h3 id="15-first-commit">1.5 First Commit</h3>
+<p>Right now this new Branch (go and check it out at https://github.com/yourOwnAccount/archipelago-deployment-live/tree/yourOwnOrg-1.0.0-RC3) will not differ at all from 1.0.0-RC3. That is OK. To make your Branch unique, what we want is to "commit" our changes. How do we do this?</p>
+<p>Let's add our <code>composer.json</code> and <code>composer.lock</code> to our change list. Both of these files are quite personal, and as you add more Drupal Modules, dependencies, or Upgrade your Archipelgo and/or Drupal Core and Modules, all of these corresponding files will change. See the <code>-f</code>?
+Because our base deployment ignores that file and you want it, we "Force" add it.
+<em>Note: At this stage <code>composer.lock</code> won't be added at all because it's still the same as before. So you can only "add" files that have changes.</em></p>
+<div class="highlight"><pre><span></span><code>git add drupal/composer.json 
+git add -f drupal/composer.lock
+</code></pre></div>
+<p>Now we can see what is new and will be committed by executing:</p>
+<div class="highlight"><pre><span></span><code>git status
+</code></pre></div>
+<p>You may see something like this:</p>
+<div class="highlight"><pre><span></span><code>On branch yourOwnOrg-1.0.0-RC3 
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+    new file:   drupal/composer.json
+
+Changes not staged <span class="k">for</span> commit:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="k">in</span> working directory<span class="o">)</span>
+    modified:   drupal/scripts/archipelago/deploy.sh
+    modified:   drupal/scripts/archipelago/update_deployed.sh
+
+Untracked files:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="k">in</span> what will be committed<span class="o">)</span>
+    deploy/ec2-docker/docker-compose.yml
+    drupal/.editorconfig
+    drupal/.gitattributes
+</code></pre></div>
+<p>If you do not want to add each <code>Changes not staged for commit</code> individually (WE recommend you only commit what you need. Be warned and take caution.), you can also issue a <code>git add .</code>, which means add all.</p>
+<div class="highlight"><pre><span></span><code>git add drupal/scripts/archipelago/deploy.sh
+git add drupal/scripts/archipelago/update_deployed.sh
+git add deploy/ec2-docker/docker-compose.yml
+</code></pre></div>
+<p>In this case we are also committing <code>docker-compose.yml</code>, which you may have customized and modified to your domain (See <a href="../archipelago-deployment-live-readme/#step-3-setup-your-enviromental-variables-for-dockerservices">Install Guide Step 3</a>), <code>deploy.sh</code> and <code>update_deployed.sh</code> scripts.
+If you ever need to avoid tracking certain files at all, you can edit the <code>.gitignore</code> file and add more patterns to it (look at it, it's fun!).</p>
+<div class="highlight"><pre><span></span><code>git commit -m <span class="s2">&quot;Fresh Install of Archipelago for yourOwnOrg&quot;</span>
+</code></pre></div>
+<p>If you had your email/user account setup correctly (see <a href="#basic-steps">Prerequisites</a>) you will see:</p>
+<div class="highlight"><pre><span></span><code>Fresh Install of Archipelago yourOwnOrg
+ <span class="m">4</span> files changed, <span class="m">360</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">46</span> deletions<span class="o">(</span>-<span class="o">)</span>
+ create mode <span class="m">100644</span> deploy/ec2-docker/docker-compose.yml
+ create mode <span class="m">100644</span> drupal/composer.json
+</code></pre></div>
+<p>And now finally you can push this back to your Fork:</p>
+<div class="highlight"><pre><span></span><code>git push upstream yourOwnOrg-1.0.0-RC3
+</code></pre></div>
+<p>And Git will respond with the following (use your <code>yourOwnAccount</code> personal Github Access Token as password):</p>
+<div class="highlight"><pre><span></span><code>Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>: yourOwnAccount
+Password <span class="k">for</span> <span class="s1">&#39;https://yourOwnAccount@github.com&#39;</span>: 
+Enumerating objects: <span class="m">18</span>, <span class="k">done</span>.
+Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">18</span>/18<span class="o">)</span>, <span class="k">done</span>.
+Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">10</span>/10<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">10</span>/10<span class="o">)</span>, <span class="m">2</span>.26 KiB <span class="p">|</span> <span class="m">2</span>.26 MiB/s, <span class="k">done</span>.
+Total <span class="m">10</span> <span class="o">(</span>delta <span class="m">5</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+remote: Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">5</span>/5<span class="o">)</span>, completed with <span class="m">5</span> <span class="nb">local</span> objects.
+To https://github.com/yourOwnAccount/archipelago-deployment-live
+   d9fa835..3427ce5  yourOwnOrg-1.0.0-RC3 -&gt; yourOwnOrg-1.0.0-RC3
+</code></pre></div>
+<p>And done.</p>
+<h2 id="2-keeping-your-archipelago-modules-updated-during-releases">2. Keeping your Archipelago Modules Updated during releases</h2>
+<p>Releases in Archipelago are a bit different to other OSS projects. When a Release is done (let's say 1.0.0-RC2) we freeze the current release branches in every module we provide, package the release, and inmediatelly start with a new Release Cycle (6 months long normally) by creating in each repository a new Set of Branches (for this example 1.0.0-RC3). All new commits, fixes, improvements, features now will ALWAYS go into the Open/on-going new cycle branches (for this example 1.0.0-RC3), and once we are done we do it all over again. We freeze (for this example 1.0.0-RC3), and a new release cycle starts with fresh new "WIP" branches (for this example 1.1.0).</p>
+<p>Some Modules like AMI or Strawberry Runners have their independent Version but are released together anyway, e.g. for 1.0.0-RC3 both AMI and Strawberry Runners are 0.2.0. Why? Because work started later than the core Archipelago and also because they are not really CORE. So what happens with <code>main</code> branches? In our project <code>main</code> branches are never experimental. They are always a 1:1 with the latest stable release. So <code>main</code> will contain a full commit of 1.0.0-RC2 until we freeze 1.0.0-RC3 when <code>main</code> gets that code. Over and over. Nice, right?</p>
+<h3 id="which-modules-belong-to-archipelago-and-follow-a-release-cycle">Which modules belong to Archipelago and follow a release cycle?</h3>
+<p>The following modules are the ones we update on every release:</p>
+<ul>
+<li><a href="https://github.com/esmero/strawberryfield">https://github.com/esmero/strawberryfield</a> -&gt; Composer name: <code>strawberryfield/strawberryfield</code></li>
+<li><a href="https://github.com/esmero/format_strawberryfield">https://github.com/esmero/format_strawberryfield</a> -&gt; Composer name: <code>strawberryfield/format_strawberryfield</code></li>
+<li><a href="https://github.com/esmero/webform_strawberryfield">https://github.com/esmero/webform_strawberryfield</a> -&gt; Composer name: <code>strawberryfield/webform_strawberryfield</code></li>
+<li><a href="https://github.com/esmero/ami">https://github.com/esmero/ami</a> -&gt; Composer name: <code>archipelago/ami</code></li>
+<li><a href="https://github.com/esmero/strawberry_runners">https://github.com/esmero/strawberry_runners</a>    -&gt; Composer name: <code>strawberryfield/strawberry_runners</code></li>
+</ul>
+<p>We also update macro modules that are meant for deployment like this <a href="https://github.com/esmero/archipelago-deployment-live">Repository</a> and <a href="https://github.com/esmero/archipelago-deployment">https://github.com/esmero/archipelago-deployment</a>.</p>
+<p>To keep your Archipelago up to date, especially once you "go custom" as described in this Documentation, the process is quite simple, e.g. to fetch latest <code>1.0.0-RC3</code> updates during the <code>1.0.0-RC3</code> release cycle run:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require strawberryfield/strawberryfield:dev-1.0.0-RC3 strawberryfield/format_strawberryfield:dev-1.0.0-RC3 strawberryfield/webform_strawberryfield:dev-1.0.0-RC3 archipelago/ami:0.2.0.x-dev strawberryfield/strawberry_runners:0.2.0.x-dev strawberryfield/strawberry_runners:0.2.0.x-dev archipelago/archipelago_subtheme:dev-1.0.0-RC3 -W&quot;</span>
+</code></pre></div>
+<p>And then run any Database updates that may be needed:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush updatedb&quot;</span>
+</code></pre></div>
+<p>This will bring all the new code and all (except if there are BUGS!) should work as expected.</p>
+<p><em>Note:</em> Archipelago really tries hard to be as backwards compatible as possible and rarely will you see a non-documented or non-dealt-with deprecation. </p>
+<p><em>Note 2:</em> We of course recommend always running the Stable (frozen) release, but since code is plastic and fixes will go into a WIP open branch, you should be safe enough to move all modules together.</p>
+<p>You can run these commands any time you need, and while the release is open you will <em>always get</em> the latest code (even if it's always the same branch). Please follow/subscribe to each Module's Github to be aware of changes/issues and improvements.</p>
+<h2 id="3-keeping-your-archipelagos-drupal-contributed-modules-and-core-updated">3. Keeping your Archipelago's Drupal Contributed Modules and Core updated</h2>
+<h3 id="31-contributed-modules">3.1 Contributed Modules.</h3>
+<p>To keep your Archipelago's Drupal up to date check your Drupal at https://yoursite.org/admin/modules/update. Make sure you check mostly (yes mostly, no need to overreact) for Security Updates. Not every Drupal contributed module (project) keeps backwards compatibility, and we try to test every version we ship (as in this repository's <code>composer.lock</code> files) before releasing. Once you detect a major change/requirement, visit the Project's Changelog Website, and take some time reading it. If you feel confident it's not going to break all, copy the suggested Composer command, e.g. if you visit <a href="https://www.drupal.org/project/google_api_client/releases/8.x-3.2">https://www.drupal.org/project/google_api_client/releases/8.x-3.2</a> you will see that the update is suggested as:</p>
+<div class="highlight"><pre><span></span><code>Install with Composer: $ composer require <span class="s1">&#39;drupal/google_api_client:^3.2&#39;</span>
+</code></pre></div>
+<p>Using the same module as an example, before doing any final updates, check your current running version (take note in case you need to revert):</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer info &#39;drupal/google_api_client&quot;</span>
+</code></pre></div>
+<p><strong>Keep the version around</strong>.</p>
+<p>Now let's update, which means using the suggested command translated to our own Docker world like this (notice the <code>-W</code>):</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require &#39;drupal/google_api_client:^3.2 -W&quot;</span>
+</code></pre></div>
+<p>And then run any Database updates that may be needed:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush updatedb&quot;</span>
+</code></pre></div>
+<p>This will update that module. Test your website. Depending on what you update, you want to focus first on the functionality it provides, and then create/edit/delete a fictitious Digital Object to ensure it did not add any errors to your most beloved Digital Objects workflows.</p>
+<p>If you see errors or you feel it's not acting as it should, you can revert by doing:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require &#39;drupal/google_api_client:^VERSION_YOU_KEPT_AROUND -W&quot;</span>
+</code></pre></div>
+<p>And then run any Database updates that may be needed:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush updatedb&quot;</span>
+</code></pre></div>
+<p>If this happens<strong> we encourage you to please</strong> 👏 share your findings with our community/slack/Github ISSUE here.</p>
+<h3 id="31-drupal-core-inside-the-same-major-version">3.1 Drupal Core inside the same major version:</h3>
+<p>This is quite similar to a contributed module but normally involves at least 3 dependencies and of course larger changes.</p>
+<h4 id="exact-version">Exact Version</h4>
+<p>Inside the same major version, e.g. inside Drupal 9, if you are currently running Drupal <code>9.0.1</code> and you want to update to an exact latest (as I write <code>9.2.4</code>):</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require drupal/core:9.2.4 drupal/core-dev:9.2.4 drupal/core-composer-scaffold:9.2.4 drupal/core-project-message:9.2.4 --update-with-dependencies&quot;</span>
+</code></pre></div>
+<p>Or under Drupal 8, if you are currently running Drupal <code>8.9.14</code> and you want to update to an exact latest (as I write <code>8.9.18</code>):</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require drupal/core-dev:8.9.18 drupal/core:8.9.18 drupal/core-composer-scaffold:8.9.18 --update-with-dependencies&quot;</span>
+</code></pre></div>
+<p>And then for both cases run any Database updates that may be needed:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush updatedb&quot;</span>
+</code></pre></div>
+<h4 id="alternative-major-version">Alternative Major Version</h4>
+<p>If you want to only remember a <code>single command</code> and want to be sure to also get all extra packages for Drupal 9, run:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require drupal/core-dev:^9 drupal/core:^9 drupal/core-composer-scaffold:^9 drupal/core-project-message:^9 -W&quot;</span>
+</code></pre></div>
+<p>Or for Drupal 8:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;composer require drupal/core-dev:^8 drupal/core:^8 drupal/core-composer-scaffold:^8 drupal/core-project-message:^8 -W&quot;</span>
+</code></pre></div>
+<p>And then for both cases run any Database updates that may be needed:</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quot;drush updatedb&quot;</span>
+</code></pre></div>
+<p>This will always get you the latest <code>Drupal</code> and <code>dependencies</code> allowed by your <code>composer.json</code>.</p>
+<h3 id="32-drupal-core-between-major-versions">3.2 Drupal Core between major versions:</h3>
+<p>Since major versions may bring larger deprecations, contributed modules will stay behind, and the world (and your database may collapse), we <em>really</em> recommend that you do some tests first (locally) or follow one of our guides. We at Archipelago will always document a larger version update. Currently, the <a href="upgradeFromD8ToD9.md">Drupal 8 to Drupal 9 Update is documented in detail here</a>.</p>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback, or open an ISSUE in this <a href="https://github.com/esmero/archipelago-deployment-live/">Archipelago Deployment Live Repository</a>.</p>
+<p>Return to <a href="../archipelago-deployment-live-readme/">Archipelago Live Deployment</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../archipelago-deployment-live-readme/" class="btn btn-neutral float-left" title="Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../archipelago-deployment-live-moveToLive/" class="btn btn-neutral float-right" title="Moving from archipelago-deployment to archipelago-deployment-live">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../archipelago-deployment-live-readme/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../archipelago-deployment-live-moveToLive/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

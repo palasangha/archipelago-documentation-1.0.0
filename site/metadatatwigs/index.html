@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/metadatatwigs/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Twig Templates and Archipelago - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Twig Templates and Archipelago";
+        var mkdocs_page_input_path = "metadatatwigs.md";
+        var mkdocs_page_url = "/metadatatwigs/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Archipelago 101</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Twig Templates and Archipelago</a>
+    <ul class="current">
+                <li class="toctree-l4 current"><a class="reference internal current" href="./">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../giveortake/">Contribution Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Instructions and Guides &raquo;</li>
+          <li>Archipelago 101 &raquo;</li>
+          <li>Digital Objects and Collections, Metadata, General Workflows &raquo;</li>
+          <li>Twig Templates and Archipelago &raquo;</li>
+      <li>Twig Templates and Archipelago</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="twig-templates-and-archipelago">Twig Templates and Archipelago</h1>
+<p><img alt="ADOlife" src="../images/jsonupcaststar.png" /></p>
+<p>Archipelago uses a fast, cached templating system that is core to Drupal, called <code>Twig</code>. In its guts (or its heart?) Archipelago uses this system to transform the <em>close to your needs open schema metadata</em> that lives in every <code>strawberryfield</code> as JSON into <em>close to other one's fixed schema needs metadata</em>. This is quite simple, but it is an essential component of our vision of how a repository should manage metadata.</p>
+<h3 id="what-is-twig">What is Twig?</h3>
+<p>Twig is a template engine for PHP part of Symfony framework.</p>
+<ul>
+<li><a href="https://twig.symfony.com">Twig in Symfony</a></li>
+<li><a href="https://www.drupal.org/docs/theming-drupal/twig-in-drupal">Twig in Drupal</a></li>
+<li>A template engine is a processor. It allows you to mix and process <em>templates</em> with <em>data</em> to generate an output <em>document</em>.<ul>
+<li>Template: Some type of static Document (we name this a “Frame”)</li>
+<li>Data: Your Archipelago Digital Object (ADO) info and your Metadata</li>
+<li>Processor: Allows you to use a rich and expressive language to pick, check, iterate, transform and output your data inside the Template. We refer to this as “casting”.</li>
+</ul>
+</li>
+</ul>
+<h3 id="where-is-twig-used-in-archipelago">Where is Twig used in Archipelago?</h3>
+<p>This templating system is exposed to Archipelago users through the UI, and is stored in the repository as content. This setup empowers users to fully control how metadata is transformed and published without touching their individual sources or needing to manage hard-coded configurations. We named these readily accessible and powerful templates <code>Metadata Display entities</code>, but they serve more than just display needs.</p>
+<p>Twig drives <strong>every</strong> Page in a Drupal 8/9/10 environment.</p>
+<ul>
+<li>Twig templates are normally files (.twig.html) that live in your Code.</li>
+<li>Modules provide Templates, Themes provide Templates</li>
+</ul>
+<p>Twig drives <strong>every</strong> aspect of your ADO exposure to the world in Archipelago and even batch Ingest.</p>
+<ul>
+<li>Strawberryfield Metadata (JSON, your Data) is passed through a <strong>Metadata Display Entity</strong> which holds:<ul>
+<li>A Twig template (so you do not need to edit Files)</li>
+<li>A desired output serialization format (the Output Document)</li>
+</ul>
+</li>
+</ul>
+<h3 id="twig-templates-as-metadata-display-entities">Twig Templates as Metadata Display Entities</h3>
+<p>Templates or recipes can be shared, exported, ingested, updated, and adapted in many ways. This means you can make changes quickly without having to wait for the next major release of Archipelago or your favorite Metadata Schema Specs Committee’s agreement to implement the next or the last version. This module not only handles metadata but media assets as well. It will extract local or remote URIs and files from your metadata and render them as media viewers: books, 3D models, images, panoramas, A/V, all with IIIF in its soul.</p>
+<p><strong>Metadata Display Entities</strong> are used for:</p>
+<ul>
+<li>Display:<ul>
+<li>ADO landing pages (via Drupal Field Formatter)</li>
+<li>IIIF or JSON driven viewers (via Drupal Field Formatter and using Exposed Metadata Endpoints)</li>
+<li>Map Formatter (Drupal Field Formatter)</li>
+<li>Custom Blocks (Drupal Views)</li>
+<li>Search Result Displays (Drupal Views)</li>
+<li>Collection and Creative Work Series (old compound) displays (Drupal Views)</li>
+</ul>
+</li>
+<li>Machinable Output<ul>
+<li>Exposed Metadata Endpoints (Standalone URLs to access metadata)</li>
+</ul>
+</li>
+<li>Batch Ingest<ul>
+<li>AMI Ingest: To transform your CSV data (one row == DATA) to Strawberry field JSON to generate an ADO</li>
+</ul>
+</li>
+</ul>
+<h3 id="twig-templates-shipped-with-archipelago">Twig Templates Shipped with Archipelago</h3>
+<p><strong>Archipelago Ships with:</strong></p>
+<ul>
+<li>IIIF Manifest V3 for Images (JSON-LD) Metadata Display</li>
+<li>IIIF Manifest V2 for Images and Documents (JSON-LD) Metadata Display</li>
+<li>IIIF Manifest V3 for Collections (JSON-LD) Metadata Display</li>
+<li>IIIF Manifest V3 for Creative Work Series/Compound Objects Parent and Children (JSON-LD) Metadata Displays</li>
+<li>A General ADO Description (HTML) Metadata Display</li>
+<li>A Linked Data Display (HTML) Metadata Display</li>
+<li>GEOJSON (JSON) Metadata Display</li>
+<li>An AMI (JSON) Ingest Template</li>
+<li>A Multiple Thumbnails via IIIF and Fontawesome (HTML) Metadata Display</li>
+<li>A Metadata Abstract for Search Results (HTML) Metadata Display</li>
+<li>A Simple Dublin Core (XML) Metadata Display</li>
+<li>MODS 3.7 (XML) Metadata Display</li>
+<li>A Schema.org (JSON-LD) Metadata Display</li>
+<li>Carousel (in Bootstrap) for Images (HTML) Metadata Display </li>
+</ul>
+<p>You can find these templates here:</p>
+<ul>
+<li>On Github:<ul>
+<li><a href="https://github.com/esmero/archipelago-deployment/tree/1.0.0/d8content/metadatadisplays">Local Deployment</a></li>
+<li><a href="https://github.com/esmero/archipelago-deployment-live/tree/1.0.0/drupal/d8content/metadatadisplays">Live/Production Deployment</a></li>
+</ul>
+</li>
+<li>In your local instance: http://localhost:8001/metadatadisplay/list</li>
+<li>In your live instance: https://yourdomain.org/metadatadisplay/list</li>
+</ul>
+<p><strong>Archipelago (the humans) will keep adding and refining these with every release.</strong></p>
+<h3 id="instructions-and-examples">Instructions and Examples</h3>
+<p>While a lot of core needs and use cases are covered with the Twig Templates shipped with Archipelago, you may want to <strong>add more Input elements</strong> to your Webforms, which in turn will generate <strong>new JSON Values</strong>, which in turn you may want to <strong>show/expose to end users</strong>.</p>
+<p><strong>Knowing</strong> (even if you do not plan to) how to edit or create your own <strong>Twig templates</strong> is important.</p>
+<ul>
+<li>This guide covers the Basics of <a href="../workingtwigs/">Working With Twig in Archipelago</a></li>
+<li>This section contains <a href="../workingtwigs/#full-examples-for-common-uses-cases">Full Examples of Common Use Cases</a></li>
+<li>This section covers a <a href="../workingtwigs/#a-recommended-workflow">Recommended Workflow</a></li>
+<li>You may also want learn more about what <code>format_strawberryfield</code> can do and what many other possibilities are exposed through our templating system in this guide: <a href="../strawberryfield-formatters/">Strawberryfield Formatters</a>.</li>
+</ul>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback.</p>
+<p>Return to the <a href="..">Archipelago Documentation main page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../customwebformelements/" class="btn btn-neutral float-left" title="Archipelago Custom Webform Elements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../workingtwigs/" class="btn btn-neutral float-right" title="Working With Twig in Archipelago (getting started with custom Twig templates)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../customwebformelements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../workingtwigs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

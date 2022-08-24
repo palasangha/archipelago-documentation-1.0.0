@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="The Digital Services Team at Metropolitan New York Library Council" /><link rel="canonical" href="http://docs.archipelago.nyc/giveortake/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Contribution Guide - Pala Archipelago Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Contribution Guide";
+        var mkdocs_page_input_path = "giveortake.md";
+        var mkdocs_page_url = "/giveortake/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/dhammacakka.png" class="logo" alt="Logo"/>
+        </a>
+        <div class="version">
+          {'provider': 'mike', 'default': 'default'}
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About Archipelago</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ourtake/">Archipelago's Philosophy & Guiding Principles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../strawberryfields/">Strawberryfields Forever</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devops/">Software Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT/">Code of Conduct</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Instructions and Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-osx/">Installing Archipelago Drupal 9 on OSX (macOS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-ubuntu/">Installing Archipelago Drupal 9 on Ubuntu 18.04 or 20.04</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-democontent/">Adding Demo Archipelago Digital Objects (ADOs) to your Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago-Deployment-Live</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-readme/">Start</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-gitworkflow/">Github Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-moveToLive/">Moving from archipelago-deployment to archipelago-deployment-live</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archipelago-deployment-live-upgradeFromD8ToD9/">Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Archipelago 101</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Digital Objects and Collections, Metadata, General Workflows</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../firstobject/">Ingesting Your First Object</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Webforms in Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../webforms/">Webforms</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../webformsasinput/">How to Create a Webform as an Input Method for Archipelago Digital Objects (ADO)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../modifyingfileextensionsinwebform/">Customizing Webforms (Modifying allowable file extensions)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../customwebformelements/">Archipelago Custom Webform Elements</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Twig Templates and Archipelago</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../metadatatwigs/">Twig Templates and Archipelago</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../workingtwigs/">Working With Twig in Archipelago (getting started with custom Twig templates)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Archipelago Multi-Importer (AMI)</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../ami_index/">Archipelago Multi-Importer (AMI)</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="#">AMI Instructions and Guides</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../annotations/">Annotations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Site Administration & Configuration</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../strawberryfield-formatters/">Strawberryfield Formatters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../createdisplaymodes/">Creating Display Modes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../archifilepersistencestrategy/">Archipelago's File Persistence Strategy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sslsetup/">How to Set Up SSL for Docker/Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xdebug/">Debugging PHP in Archipelago</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">General Q&A</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_index/">General Q&A</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_twig_modules_configuration/">Twig Modules Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_smtp_configuration/">SMTP Configuration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../generalqa_minio_logging/">Min.io Logging</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Information</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../presentations_docs/">Archipelago Presentations and Documents</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inthewild/">Archipelagos in the Wild</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Contribution Guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#where-the-wild-things-live">Where The Wild Things Live</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#questions-answers-and-in-transit-between-both-ends">Questions, Answers and In Transit Between Both Ends</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation-workflow">Documentation Workflow</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#development-workflow">Development Workflow</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-set-up-archipelago-documentation-github-repository">Example: Set Up Archipelago Documentation GitHub Repository</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-up-git-remote-as-upstream">Set Up Git Remote As upstream</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-your-issue-branch">Create Your ISSUE Branch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#do-some-clean-up-and-test-locally">Do Some Clean Up and Test Locally</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commit-changes">Commit Changes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#push-to-the-branch">Push To The Branch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-pull-request">Create A Pull Request</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About This Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Care & Coding + Fixing / Acknowledgments / License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Pala Archipelago Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Additional Information &raquo;</li>
+      <li>Contribution Guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="archipelago-contribution-guide">Archipelago Contribution Guide</h1>
+<p>Archipelago welcomes and appreciates any type of contribution, from use cases and needs, questions, documentation, devops and configuration and -- of course -- code, fixes, or new features. To make the process less painful, we recommend you first to read our documentation and deploy a local instance. After that please follow the guidelines below to help you get started.</p>
+<p><code>Archipelago</code> welcomes, appreciates, and recognizes any and all types of contribution. This includes input on all use cases and needs, questions or answers, documentation, DevOps, and configurations. We also welcome general ideas, thoughts, and even dreams for the future of our repository! Of course, we also invite you to contribute PHP code, including fixes and new features.</p>
+<p>We will be helpful, kind, and open. We encourage discussions and always respect one another's opinions, language, gender, style, backgrounds, origins, and destinations, provided they come from the same root values of respect, as stated here. We support conflict resolution using nothing more than basic common sense. We value diversity in all its shapes, forms, colors, epoches, numbers, and kinds, with or without labels, including in-between and evolving. We always assume we can do better and that you have done a lot. Under this very basic social framework, this is how we hope you can contribute:</p>
+<h2 id="where-the-wild-things-live">Where The Wild Things Live</h2>
+<p>Archipelago has 5 active GitHub repositories</p>
+<ul>
+<li><a href="https://github.com/esmero/strawberryfield">Strawberryfield</a>
+  What? Code: Deals with metadata storage and exposure to Drupal. Events/Subscribers that trigger when content is modified. The way internal pieces of JSON are exposed to the rest of the ecosystem. Core to all of what Archipeleago is as a concept. One of its Drupal forms is a Field.</li>
+<li><a href="https://github.com/esmero/webform_strawberryfield">Webform Strawberryfield</a>
+  What? Code: Deals with UI based ingest of content using webforms. How files and media are attached to JSON, how tech md is extracted, and any interaction that happens during the edit and ingest processes via a form. In its Drupal form it provides a Field Widget for <code>Strawberryfield</code>.</li>
+<li><a href="https://github.com/esmero/format_strawberryfield">Format Strawberryfield</a>
+  What? Code: Deals with exposing and transforming the JSON when navigating the site. What is displayed, how it is displayed. Provides templating, metadata display entities via Twig, and direct file downloads. In its Drupal form it provides many field formatters for Strawberryfield` and a content entity for the Twig templates.</li>
+<li><a href="https://github.com/esmero/archipelago-deployment">Archipelago Deployment</a>
+  What? DevOps: Docker-compose deployment strategy, including a full skeleton project with persistence folders for Min.io, DB, Solr, Cantaloupe and Drupal 8. Includes initial deployment configurations, which modules are enabled, how things look in Drupal 8 and some scripts plus the deployment documentation for both OSX and Linux.</li>
+<li><a href="https://github.com/esmero/archipelago-documentation">Archipelago Documentation</a>
+  What? Documentation: This guide and whatever we manage to write to explain Archipelago goes here.</li>
+</ul>
+<h2 id="questions-answers-and-in-transit-between-both-ends">Questions, Answers and In Transit Between Both Ends</h2>
+<p>We host a community interaction channel, our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">google group</a>. This is the best place to ask questions and make suggestions that are not specific to a single module, and/or if you would like to contribute to a larger conversation within our community. Discussions work best in this forum (not excluding GitHub of course), and our official announcements are posted there too.</p>
+<h2 id="documentation-workflow">Documentation Workflow</h2>
+<p>Documentation is an evolving effort, and we need help. This guide lives in GitHub in <a href="https://github.com/esmero/archipelago-documentation">Archipelago Documentation</a>. Documentation and Development Worklfow both work the same way, so keep reading!</p>
+<h2 id="development-workflow">Development Workflow</h2>
+<p>Start by reading open ISSUES (so you don't end up redoing what someone else is already working on) and looking at our <a href="https://github.com/esmero/archipelago-deployment/issues/103">Roadmap for version 1.0.0-RC2</a>. If the solution to your problem is not there or if there is an unchecked element in the roadmap, this is a great opportunity to help by creating a new ISSUE.</p>
+<p>Next, start by opening an GitHub ISSUE in any of the 5 GitHub repositories, depending on what it is you are trying to do.</p>
+<p>Please be concise with the title of your ISSUE so that it is easy to understand. Use Markdown to explain the what, how, etc, of your contribution. Note: Even if something related is already in the works, you can still contribute. Just add your comments on any open ISSUE. Or, if you think you want to contribute with a totally different perspective, feel free to open a new ISSUE anyway. We can always discuss next steps starting from there. Every community has its rhythm and style and our style is just beginning to develop. We are still figuring out what works best for everyone.</p>
+<p>Once you are done and you feel comfortable working to make a change yourself, take note of the <code>ISSUE number</code> (lets name it <code>#issuenumber</code>).</p>
+<p>The gist is:</p>
+<ul>
+<li>Fork the GitHub repository where you created the ISSUE, decide which branch you want to change.</li>
+<li>Make a new branch out of that one and name it ISSUE-#issuenumber. E.g if #issuenumber is 6, name your branch ISSUE-6.</li>
+<li>Make changes in that branch and send a pull request.</li>
+</ul>
+<p>As a best practice, we encourage pull requests to discuss/fix existing code, new code, and documention changes.</p>
+<p>For the full step-by-step workflow, we will use <a href="https://github.com/esmero/archipelago-documentation">Archipelago Documentation</a> and the <code>1.0.0</code> branch as example. The same applies to any of the other repositories: just change the remote urls and use the most current branch name.</p>
+<h3 id="example-set-up-archipelago-documentation-github-repository">Example: Set Up Archipelago Documentation GitHub Repository</h3>
+<p>Fork the <a href="https://github.com/esmero/archipelago-documentation/fork">Archipelago Documentation Upstream</a> source repository to your own personal GitHub account (e.g. YOU). Copy the URL of your Archipelago Documentation fork (you will need it for the <code>git clone</code> command below).</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/YOU/archipelago-documentation
+$ <span class="nb">cd</span> archipelago-documentation
+$ git checkout <span class="m">1</span>.0.0
+</code></pre></div>
+<h3 id="set-up-git-remote-as-upstream">Set Up Git Remote As <code>upstream</code></h3>
+<div class="highlight"><pre><span></span><code>$ git remote add upstream https://github.com/esmero/archipelago-documentation
+$ git fetch upstream
+$ git merge upstream/1.0.0
+...
+</code></pre></div>
+<h3 id="create-your-issue-branch">Create Your ISSUE Branch</h3>
+<p>Before making changes, make sure you create a branch using the ISSUE number you created for these contributions.</p>
+<div class="highlight"><pre><span></span><code>$ git checkout -b ISSUE-6
+</code></pre></div>
+<h3 id="do-some-clean-up-and-test-locally">Do Some Clean Up and Test Locally</h3>
+<p>After your code changes, make sure</p>
+<ul>
+<li>If modifying <code>PHP</code>, run <code>phpcs --standard=Drupal yourchanged.file.php</code>. We (try our best to) use Drupal 8 coding standards.</li>
+<li>If modifying a <code>MARKDOWN</code> file, make sure it renders well (you can use Textmate, Atom, Textile, etc to preview) and that links are not broken.</li>
+<li>If writing large pieces of code, add PHP Tests. We can help if you don't know how (tell us in the ISSUE). Tests will be enforced starting with the first stable release.</li>
+<li>If modifying <code>PHP</code>, please test your changes live on your local instance of Archipelago. All non-documentation modules are already inside <code>web/modules/contrib/</code>.</li>
+</ul>
+<h3 id="commit-changes">Commit Changes</h3>
+<p>After verification, commit your changes. This is <a href="https://chris.beams.io/posts/git-commit/">very good post</a> on how to write commit messages.</p>
+<div class="highlight"><pre><span></span><code>$ git commit -am <span class="s1">&#39;Fix that Strawberry&#39;</span>
+</code></pre></div>
+<h3 id="push-to-the-branch">Push To The Branch</h3>
+<p>Push your locally committed changes to the remote origin (your fork)</p>
+<div class="highlight"><pre><span></span><code>$ git push origin ISSUE-6
+</code></pre></div>
+<h3 id="create-a-pull-request">Create A Pull Request</h3>
+<p>Pull requests can be created via GitHub. <a href="https://help.github.com/articles/creating-a-pull-request/">This document</a> explains in detail how to create one. After your Pull Request gets peer reviewed and approved, it can be merged. Discussion can happen and peers can ask you for modifications, fixes or more information on how to test. We will be respectful. You will be given credit for all your contributions and shown appreciation. There is no wrong and never too little. There could never be too much!</p>
+<hr />
+<p>Thank you for reading! Please contact us on our <a href="https://groups.google.com/forum/#!forum/archipelago-commons">Archipelago Commons Google Group</a> with any questions or feedback.</p>
+<p>Return to the <a href="..">Archipelago Documentation main page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../inthewild/" class="btn btn-neutral float-left" title="Archipelagos in the Wild"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About This Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../inthewild/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
