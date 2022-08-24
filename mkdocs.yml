@@ -59,7 +59,7 @@ nav:
       - About This Documentation: about.md
       - Care & Coding + Fixing / Acknowledgments / License: acknowledgments.md
 theme:
-  name: material
+  name: readthedocs
   favicon: images/dhammacakka.png
   logo: images/dhammacakka.png
   features:
