@@ -505,6 +505,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_1">
@@ -567,6 +569,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../archipelago-deployment-windows/" class="md-nav__link">
+        Installing Archipelago Drupal 9 on Windows 10/11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../archipelago-deployment-democontent/" class="md-nav__link">
         Adding Demo Archipelago Digital Objects (ADOs) to your Repository
       </a>
@@ -613,6 +629,10 @@
       
       
       
+        
+          
+        
+          
         
           
         
@@ -965,6 +985,34 @@
     <li class="md-nav__item">
       <a href="../archipelago-deployment-live-upgradeFromD8ToD9/" class="md-nav__link">
         Upgrading Drupal 8 to Drupal 9 (1.0.0-RC2 to 1.0.0-RC3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archipelago-deployment-upgradeFromRC3/" class="md-nav__link">
+        Upgrading from 1.0.0-RC3 to 1.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archipelago-deployment-live-updatingContainers/" class="md-nav__link">
+        Updating Docker Containers
       </a>
     </li>
   
@@ -2250,7 +2298,7 @@ docker <span class="nb">exec</span> -ti esmero-php bash -c <span class="s2">&quo
 </code></pre></div>
 <p>And now you can deploy Drupal! </p>
 <p><strong>IMPORTANT:</strong> Make sure you replace in the following command inside <code>root:MYSQL_ROOT_PASSWORD</code> the <code>MYSQL_ROOT_PASSWORD</code> string with the <strong>value</strong> you used/assigned in your <code>.env</code> file for <code>MYSQL_ROOT_PASSWORD</code>. And replace <code>ADMIN_PASSWORD</code> with a password that is safe and you won't forget! That passwords is for your Drupal super user (uid:0).</p>
-<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti -u www-data esmero-php bash -c <span class="s2">&quot;cd web;../vendor/bin/drush -y si --verbose --existing-config --db-url=mysql://root:MYSQL_ROOT_PASSWORD@esmero-db/drupal9 --account-name=admin --account-pass=ADMIN_PASSWORD -r=/var/www/html/web --sites-subdir=default --notify=false;drush cr;chown -R www-data:www-data sites;&quot;</span>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -ti -u www-data esmero-php bash -c <span class="s2">&quot;cd web;../vendor/bin/drush -y si --verbose --existing-config --db-url=mysql://root:MYSQL_ROOT_PASSWORD@esmero-db/drupal --account-name=admin --account-pass=ADMIN_PASSWORD -r=/var/www/html/web --sites-subdir=default --notify=false;drush cr;chown -R www-data:www-data sites;&quot;</span>
 </code></pre></div>
 <h3 id="step-6-users-and-initial-content">Step 6. Users and initial Content.</h3>
 <p>After installation is done (may take a few) you can install initial users and assign them roles. Copy each line separately. A missing permission will not let you ingest the initial Metadata Displays and AMI set.</p>
