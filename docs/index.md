@@ -1,4 +1,4 @@
-# Pala - Archipelago Commons Intro
+# Archipelago Commons Intro
 
 Archipelago Commons, or simply Archipelago, is an evolving Open Source Digital Objects Repository / DAM Server Architecture based on the popular CMS [`Drupal8/9`](https://www.drupal.org) and released under [`GLP V.3 License`](https://www.gnu.org/licenses/gpl-3.0.txt).
 

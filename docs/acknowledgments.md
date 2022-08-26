@@ -8,7 +8,7 @@
 
 # Acknowledgments
 
-This software is a [Metropolitan New York Library Council](https://metro.org) Open-Source initiative and part of the Archipelago Commons project. We have edited some of the configurations according to our requirement.
+This software is a [Metropolitan New York Library Council](https://metro.org) Open-Source initiative and part of the Archipelago Commons project.
 
 # License
 
